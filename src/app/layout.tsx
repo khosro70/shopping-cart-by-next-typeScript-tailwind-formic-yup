@@ -1,8 +1,57 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import { returnMySourceFont } from "@/helpers/returnMySourceFont";
 
-const inter = Inter({ subsets: ["latin"] });
+const vazirMatn = localFont({
+  src: [
+    {
+      path: "../../public/font/Vazirmatn-Thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../../public/font/Vazirmatn-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={vazirMatn.className}>{children}</body>
     </html>
   );
 }
