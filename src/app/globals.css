@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.StyleMenuItem {
+  @apply relative pb-[2px];
+  border-bottom: 2px solid transparent;
+  transition: border 0.7s ease;
+  border-image-slice: 1;
+}
+
+.StyleMenuItem:hover {
+  border-color: red;
+  border-image-slice: 100%;
+}
