@@ -1,9 +1,12 @@
 import Header from "@/components/modules/Header";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
-    <main className="">
+    <main className="h-[4200px] container mx-auto 2xl:max-w-screen-2xl">
       <Header />
     </main>
   );
-}
+};
+
+export default Home;
