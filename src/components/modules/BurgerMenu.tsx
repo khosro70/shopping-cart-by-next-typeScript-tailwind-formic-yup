@@ -20,12 +20,12 @@ const BurgerMenu: React.FC<BurgerMenuInterfaceProps> = ({
     <>
       <div
         onClick={handleOutsideClick}
-        className={`fixed w-screen h-screen bg-gray-500 z-10 top-0 bottom-0 right-0 left-0 opacity-50 ${
+        className={`fixed w-screen h-screen bg-gray-300 z-10 top-0 bottom-0 right-0 left-0 opacity-50 ${
           openBurger ? "translate-x-0" : "translate-x-full"
         }`}
       ></div>
       <div
-        className={`classForCloseBurgerOnOutsideClick w-64 bg-gray-300 h-screen right-0 transition-all top-0 opacity-100 fixed z-20 p-6 ${
+        className={`classForCloseBurgerOnOutsideClick w-64 bg-stone-100 h-screen right-0 transition-all top-0 opacity-100 fixed z-20 p-6 ${
           openBurger ? "translate-x-0" : "translate-x-full"
         }`}
       >

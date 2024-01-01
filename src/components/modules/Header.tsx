@@ -21,8 +21,8 @@ export default function Header() {
   };
 
   return (
-    <div>
-      <div className="relative flex container mx-auto 2xl:max-w-screen-2xl w-full py-6 px-10 lg:px-7 xl:px-10 bg-stone-50 justify-between items-center">
+    <div className="sticky top-0 shadow-lg bg-stone-50 mb-6">
+      <div className="relative flex container mx-auto 2xl:max-w-screen-2xl w-full py-6 px-4 justify-between items-center">
         <button
           className="lg:hidden"
           onClick={() => setOpenBurger(!openBurger)}
