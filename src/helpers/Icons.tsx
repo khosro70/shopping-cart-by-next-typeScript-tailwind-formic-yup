@@ -108,3 +108,127 @@ export function ShoppingCartIcon() {
     </svg>
   );
 }
+
+export function MobileIcon() {
+  return (
+    <svg width="20" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M13 12.75v7.5c0 3-.75 3.75-3.75 3.75h-4.5c-3 0-3.75-.75-3.75-3.75v-7.5C1 9.75 1.75 9 4.75 9h4.5c3 0 3.75.75 3.75 3.75ZM8.5 11.625h-3"
+        stroke="#222F5D"
+        strokeWidth="1.125"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7 21.825A1.163 1.163 0 1 0 7 19.5a1.163 1.163 0 0 0 0 2.325Z"
+        stroke="#222F5D"
+        strokeWidth="1.125"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="10.5" cy="9.5" r="9.5" fill="#AFAFAF" fillOpacity=".29" />
+    </svg>
+  );
+}
+
+export function LaptopIcon() {
+  return (
+    <svg width="21" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11.5" cy="9.5" r="9.5" fill="#AFAFAF" fillOpacity=".29" />
+      <path
+        d="M4.293 8.334H11.7c2.373 0 2.967.593 2.967 2.96v4.22c0 2.373-.594 2.96-2.96 2.96H4.293c-2.366.006-2.96-.587-2.96-2.954v-4.226c0-2.367.594-2.96 2.96-2.96ZM8 18.48v3.187M1.333 15.666h13.334M5 21.666h6"
+        stroke="#222F5D"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function WatchIcon() {
+  return (
+    <svg width="21" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="11.5" cy="9.5" r="9.5" fill="#AFAFAF" fillOpacity=".29" />
+      <path
+        d="M5.666 18.667h4.667c1.553 0 2.333-.78 2.333-2.334v-4.666c0-1.553-.78-2.333-2.333-2.333H5.666c-1.553 0-2.333.78-2.333 2.333v4.667c0 1.553.78 2.333 2.333 2.333ZM10.666 7.333H5.333M10.666 20.666H5.333"
+        stroke="#222F5D"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M7.667 12.334v2h2"
+        stroke="#222F5D"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function ProductBrandIcon() {
+  return (
+    <svg width="20" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="10.5" cy="9.5" r="9.5" fill="#AFAFAF" fillOpacity=".29" />
+      <path
+        d="M12.833 21.271H1.167a.44.44 0 0 1-.438-.438.44.44 0 0 1 .438-.437h11.666a.44.44 0 0 1 .438.438.44.44 0 0 1-.438.437Z"
+        fill="#222F5D"
+      />
+      <path
+        d="M2.158 20.833h-.875l.03-7.017c0-.496.227-.957.618-1.26l4.083-3.18a1.61 1.61 0 0 1 1.972 0l4.083 3.174c.385.303.619.776.619 1.266v7.017h-.875v-7.012a.747.747 0 0 0-.28-.577L7.449 10.07a.735.735 0 0 0-.898 0L2.468 13.25a.727.727 0 0 0-.28.571l-.03 7.012Z"
+        fill="#222F5D"
+      />
+      <path
+        d="M9.917 21.27H4.083a.44.44 0 0 1-.437-.437v-5.541c0-.724.589-1.313 1.312-1.313h4.084c.723 0 1.312.59 1.312 1.313v5.541a.44.44 0 0 1-.437.438Zm-5.396-.874h4.958V15.29a.44.44 0 0 0-.437-.437H4.958a.44.44 0 0 0-.437.438v5.104Z"
+        fill="#222F5D"
+      />
+      <path
+        d="M5.833 18.791a.44.44 0 0 1-.437-.437v-.875a.44.44 0 0 1 .437-.438.44.44 0 0 1 .438.438v.875a.44.44 0 0 1-.438.438ZM7.875 12.813h-1.75a.44.44 0 0 1-.438-.438.44.44 0 0 1 .438-.438h1.75a.44.44 0 0 1 .438.438.44.44 0 0 1-.438.438Z"
+        fill="#222F5D"
+      />
+    </svg>
+  );
+}
+
+export const ShevronIcon: React.FC<ShevronIconProps> = ({
+  productColorShow,
+}) => {
+  return (
+    <svg
+      className={`transition ${productColorShow ? "rotate-180" : ""}`}
+      width="13"
+      height="13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.21 4.442c.103 0 .206.037.287.119L6.03 8.092c.26.26.682.26.942 0l3.532-3.531a.409.409 0 0 1 .574 0 .409.409 0 0 1 0 .574L7.545 8.667a1.484 1.484 0 0 1-2.09 0L1.923 5.135a.409.409 0 0 1 0-.574.426.426 0 0 1 .287-.12Z"
+        fill="#222F5D"
+      />
+    </svg>
+  );
+};
+
+interface ShevronIconPropss {
+  productBrandShow: boolean;
+}
+
+export const ShevronIconBrand: React.FC<ShevronIconPropss> = ({
+  productBrandShow,
+}) => {
+  return (
+    <svg
+      className={`transition ${productBrandShow ? "rotate-180" : ""}`}
+      width="13"
+      height="13"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.21 4.442c.103 0 .206.037.287.119L6.03 8.092c.26.26.682.26.942 0l3.532-3.531a.409.409 0 0 1 .574 0 .409.409 0 0 1 0 .574L7.545 8.667a1.484 1.484 0 0 1-2.09 0L1.923 5.135a.409.409 0 0 1 0-.574.426.426 0 0 1 .287-.12Z"
+        fill="#222F5D"
+      />
+    </svg>
+  );
+};

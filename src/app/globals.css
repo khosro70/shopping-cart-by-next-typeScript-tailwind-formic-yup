@@ -17,3 +17,30 @@ body {
   border-color: red;
   border-image-slice: 100%;
 }
+
+.desktopFilter {
+  max-height: calc(100vh - 140px);
+}
+
+/* scroll bar style  */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b3aeae;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777070;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #585656;
+}

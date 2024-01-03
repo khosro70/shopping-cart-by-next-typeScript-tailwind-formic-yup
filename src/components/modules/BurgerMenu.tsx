@@ -34,12 +34,12 @@ const BurgerMenu: React.FC<BurgerMenuInterfaceProps> = ({
             <CloseIcon />
           </button>
         </div>
-        <div className="flex justify-center items-center mb-5 bg-stone-200 p-1 rounded">
+        <div className="flex justify-center items-center mb-5 bg-stone-200 rounded pr-3">
           <button>
             <SearchIcon />
           </button>
           <input
-            className="flex-1 bg-stone-200 mr-2 text-sm focus:outline-none text-slate-600"
+            className="flex-1 border-none bg-stone-200 text-sm focus:outline-none focus:ring-0 text-slate-600"
             placeholder="جست و جوی محصول و ..."
           />
         </div>

@@ -21,12 +21,12 @@ const SearchAndMenuItems: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="hidden lg:flex justify-center items-center max-w-[240px] lg:w-1/5 bg-stone-200 p-2 mr-2 md:mr-10 lg:mr-3 xl:mr-32 rounded flex-auto">
+      <div className="hidden lg:flex justify-center items-center max-w-[260px] lg:w-1/5 bg-stone-200 p-1 mr-2 md:mr-10 lg:mr-3 xl:mr-32 rounded flex-auto">
         <button>
           <SearchIcon />
         </button>
         <input
-          className="flex-1 bg-stone-200 mr-2 focus:outline-none text text-slate-600"
+          className="flex-1 border-none bg-stone-200 mr-2 focus:border-none focus:outline-none focus:ring-0 text text-slate-600"
           placeholder="جست و جوی نام محصول و ..."
         />
       </div>
