@@ -2,10 +2,10 @@ import { useState } from "react";
 import CategoryItemInNavbar from "./CategoryItemInNavbar";
 
 const CategoryInNavbar: React.FC = () => {
-  const [selectedItemId, setSelectedItemId] = useState<number | null>(1);
+  const [selectedItemId, setSelectedItemId] = useState<number>(1);
 
   const handleItemClick = (id: number) => {
-    setSelectedItemId((prevId) => (prevId === id ? null : id));
+    setSelectedItemId((prevId) => (prevId === id ? id : id));
   };
 
   const items = [
