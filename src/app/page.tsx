@@ -16,7 +16,9 @@ const Home: NextPage = () => {
             {/* nav filter */}
             <NavFilters />
             {/* cards */}
-            <div className="bg-green-500 h-52 rounded"></div>
+            <div className="bg-green-500 h-52 rounded">
+
+            </div>
           </div>
         </div>
       </main>
