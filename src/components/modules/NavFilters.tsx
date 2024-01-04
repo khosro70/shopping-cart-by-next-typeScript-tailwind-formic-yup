@@ -17,7 +17,7 @@ const NavFilters: React.FC = () => {
     { id: 4, text: "پرفروش ترین ها" },
   ];
   return (
-    <div className="bg-gray-50 h-[40px] mb-4 rounded flex items-center md:px-4 gap-4 md:gap-10 text-[10px] md:text-sm">
+    <div className="bg-gray-50 h-[40px] mb-4 rounded flex items-center md:px-4 gap-4 md:gap-8 text-[10px] md:text-sm">
       {items.map((item) => (
         <div
           key={item.id}

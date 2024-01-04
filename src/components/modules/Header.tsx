@@ -21,35 +21,43 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky top-0 shadow-lg bg-stone-50 mb-6">
-      <div className="relative flex container mx-auto 2xl:max-w-screen-2xl w-full py-6 px-4 justify-between items-center">
-        <button
-          className="lg:hidden"
-          onClick={() => setOpenBurger(!openBurger)}
-        >
-          <BurgerIcon />
-        </button>
-        <SearchAndMenuItems />
-        <div className="flex justify-start lg:mr-3">
-          <div className="p-2 border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
-            <Link className="flex justify-center items-center text-sm" href="#">
-              <ShoppingCartIcon />
-              <span className="mr-2 lg:text-sm">سبد خرید</span>
-            </Link>
-          </div>
-          <div className="p-2 mr-[2px] border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
-            <Link className="flex justify-center items-center text-sm" href="#">
-              <LoginIcon />
-              <span className="mr-2 lg:text-sm">ورود</span>
-            </Link>
+    <>
+      <div className="sticky top-0 shadow-lg bg-stone-50 mb-6">
+        <div className="relative flex container mx-auto 2xl:max-w-screen-2xl w-full py-6 px-4 justify-between items-center">
+          <button
+            className="lg:hidden"
+            onClick={() => setOpenBurger(!openBurger)}
+          >
+            <BurgerIcon />
+          </button>
+          <SearchAndMenuItems />
+          <div className="flex justify-start lg:mr-3">
+            <div className="p-2 border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
+              <Link
+                className="flex justify-center items-center text-sm"
+                href="#"
+              >
+                <ShoppingCartIcon />
+                <span className="mr-2 lg:text-sm">سبد خرید</span>
+              </Link>
+            </div>
+            <div className="p-2 mr-[2px] border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
+              <Link
+                className="flex justify-center items-center text-sm"
+                href="#"
+              >
+                <LoginIcon />
+                <span className="mr-2 lg:text-sm">ورود</span>
+              </Link>
+            </div>
           </div>
         </div>
-        <BurgerMenu
-          handleOutsideClick={handleOutsideClick}
-          openBurger={openBurger}
-          setOpenBurger={setOpenBurger}
-        />
       </div>
-    </div>
+      <BurgerMenu
+        handleOutsideClick={handleOutsideClick}
+        openBurger={openBurger}
+        setOpenBurger={setOpenBurger}
+      />
+    </>
   );
 }
