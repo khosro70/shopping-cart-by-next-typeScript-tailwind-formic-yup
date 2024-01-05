@@ -9,7 +9,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Header />
-      <main className="h-[4200px] container mx-auto 2xl:max-w-screen-2xl px-4">
+      <main className="h-fit container mx-auto 2xl:max-w-screen-2xl px-4 mt-28">
         {/* نوار حرکت تیترهای مهم به صورت انیمیشن */}
         <div className="grid h-56 gap-4">
           <DesktopNavbar />

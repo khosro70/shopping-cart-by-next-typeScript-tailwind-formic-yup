@@ -31,7 +31,7 @@ export const productsData = [
     id: 5,
     name: "iphone15",
     price: "۳۳,۵۵۳,۴۰۰",
-    image: "iphone15.jpg",
+    image: "galaxyA14.jpg",
     brand: "اپل",
   },
   {

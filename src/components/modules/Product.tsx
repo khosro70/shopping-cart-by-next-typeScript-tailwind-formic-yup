@@ -15,7 +15,7 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col p-2">
+    <div className="bg-gray-50 flex flex-col p-2 hover:shadow-2xl">
       <Image
         className="mb-4 rounded w-full"
         src={`/images/${image}`}
