@@ -5,3 +5,14 @@ export interface BurgerMenuInterfaceProps {
   openBurger: boolean;
   setOpenBurger: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+export interface ProductInterfaceProps {
+  key: number;
+  data: {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    brand: string;
+  };
+}

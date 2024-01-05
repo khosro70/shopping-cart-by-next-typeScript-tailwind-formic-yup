@@ -1,6 +1,7 @@
 import DesktopNavbar from "@/components/modules/DesktopNavbar";
 import Header from "@/components/modules/Header";
 import NavFilters from "@/components/modules/NavFilters";
+import Products from "@/components/modules/Products";
 
 import { NextPage } from "next";
 
@@ -15,10 +16,8 @@ const Home: NextPage = () => {
           <div className="lg:mr-[225px]">
             {/* nav filter */}
             <NavFilters />
-            {/* cards */}
-            <div className="bg-green-500 h-52 rounded">
-
-            </div>
+            {/* Products */}
+            <Products />
           </div>
         </div>
       </main>
