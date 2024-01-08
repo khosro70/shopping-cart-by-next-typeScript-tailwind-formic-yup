@@ -14,5 +14,24 @@ export interface ProductInterfaceProps {
     price: string;
     image: string;
     brand: string;
+    type: string;
   };
+}
+
+export interface productInterface {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  brand: string;
+  type: string;
+  saleNumber: number;
+  Popularity: number;
+}
+
+export interface CategoryItemInNavbarPropsInterface {
+  id: number;
+  text: string;
+  isSelected: boolean;
+  onClick: (id: number) => void;
 }

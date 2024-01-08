@@ -9,9 +9,10 @@ const CategoryInNavbar: React.FC = () => {
   };
 
   const items = [
-    { id: 1, text: "تلفن همراه" },
-    { id: 2, text: "لپ تاپ" },
-    { id: 3, text: "ساعت هوشمند" },
+    { id: 1, text: "تمام محصولات" },
+    { id: 2, text: "تلفن همراه" },
+    { id: 3, text: "لپ تاپ" },
+    { id: 4, text: "ساعت هوشمند" },
   ];
 
   return (

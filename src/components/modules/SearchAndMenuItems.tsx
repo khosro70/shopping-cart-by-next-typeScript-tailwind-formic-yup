@@ -1,5 +1,5 @@
+import { menuItems } from "@/helpers/Datas";
 import { DigitaizIcon, SearchIcon } from "@/helpers/Icons";
-import { menuItems } from "@/helpers/menuItems";
 import Link from "next/link";
 import React from "react";
 

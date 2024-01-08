@@ -1,9 +1,9 @@
 import { CloseIcon, SearchIcon } from "@/helpers/Icons";
-import { menuItems } from "@/helpers/menuItems";
 import Link from "next/link";
 import React from "react";
 
 import { BurgerMenuInterfaceProps } from "@/helpers/conteracts";
+import { menuItems } from "@/helpers/Datas";
 
 const BurgerMenu: React.FC<BurgerMenuInterfaceProps> = ({
   handleOutsideClick,

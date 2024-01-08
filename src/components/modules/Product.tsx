@@ -6,6 +6,7 @@ import { FaCheck } from "react-icons/fa";
 import Link from "next/link";
 
 import { ProductInterfaceProps } from "@/helpers/conteracts";
+import { englishNumbersToPersian } from "@/helpers/functions";
 
 const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
   const [selectedSpan, setSelectedSpan] = useState<number | null>(2);
@@ -44,11 +45,13 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
         </div>
       </div>
       <p className="text-right mb-3 text-lg">{name}</p>
-      <p className="text-end text-orange-700 mb-3">{price} تومان</p>
+      <p className="text-end text-orange-700 mb-3">
+        {englishNumbersToPersian(price)} تومان
+      </p>
       <hr />
       <Link
         href="#"
-        className="flex justify-center p-3 rounded w-full font-bold text-orange-800 text-lg hover:bg-gray-300"
+        className="flex bottom-1 justify-center p-3 rounded w-full font-bold text-orange-800 text-lg hover:bg-gray-300"
       >
         مشاهده و سفارش
       </Link>
