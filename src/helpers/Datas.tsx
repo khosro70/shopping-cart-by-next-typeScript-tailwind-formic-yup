@@ -8,6 +8,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 1,
     Popularity: 1,
+    discountPercentage: "",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 1,
     Popularity: 2,
+    discountPercentage: "5",
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 1,
     Popularity: 3,
+    discountPercentage: "",
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 2,
     Popularity: 4,
+    discountPercentage: "14",
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 2,
     Popularity: 5,
+    discountPercentage: "",
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 2,
     Popularity: 6,
+    discountPercentage: "24",
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 3,
     Popularity: 7,
+    discountPercentage: "",
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 3,
     Popularity: 8,
+    discountPercentage: "5",
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 3,
     Popularity: 9,
+    discountPercentage: "",
   },
   {
     id: 10,
@@ -98,6 +107,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 4,
     Popularity: 10,
+    discountPercentage: "2",
   },
   {
     id: 11,
@@ -108,6 +118,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 4,
     Popularity: 11,
+    discountPercentage: "",
   },
   {
     id: 12,
@@ -118,6 +129,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 5,
     Popularity: 12,
+    discountPercentage: "7",
   },
   {
     id: 13,
@@ -128,6 +140,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 5,
     Popularity: 13,
+    discountPercentage: "",
   },
   {
     id: 14,
@@ -138,6 +151,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 6,
     Popularity: 14,
+    discountPercentage: "25",
   },
   {
     id: 15,
@@ -148,6 +162,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 7,
     Popularity: 15,
+    discountPercentage: "",
   },
   {
     id: 16,
@@ -158,6 +173,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 8,
     Popularity: 16,
+    discountPercentage: "12",
   },
   {
     id: 17,
@@ -168,6 +184,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 9,
     Popularity: 17,
+    discountPercentage: "20",
   },
   {
     id: 18,
@@ -178,6 +195,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 10,
     Popularity: 18,
+    discountPercentage: "",
   },
   {
     id: 19,
@@ -188,6 +206,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 11,
     Popularity: 19,
+    discountPercentage: "",
   },
   {
     id: 20,
@@ -198,6 +217,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 12,
     Popularity: 20,
+    discountPercentage: "8",
   },
   {
     id: 21,
@@ -208,6 +228,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 6,
     Popularity: 21,
+    discountPercentage: "",
   },
   {
     id: 22,
@@ -218,6 +239,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 13,
     Popularity: 22,
+    discountPercentage: "6",
   },
   {
     id: 23,
@@ -228,6 +250,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 4,
     Popularity: 23,
+    discountPercentage: "",
   },
   {
     id: 24,
@@ -238,6 +261,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 7,
     Popularity: 24,
+    discountPercentage: "8",
   },
   {
     id: 25,
@@ -248,6 +272,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 14,
     Popularity: 25,
+    discountPercentage: "",
   },
   {
     id: 26,
@@ -258,6 +283,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 5,
     Popularity: 26,
+    discountPercentage: "41",
   },
   {
     id: 27,
@@ -268,6 +294,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 8,
     Popularity: 27,
+    discountPercentage: "16",
   },
   {
     id: 28,
@@ -278,6 +305,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 15,
     Popularity: 28,
+    discountPercentage: "",
   },
   {
     id: 29,
@@ -288,6 +316,7 @@ export const productsData = [
     type: "watch",
     saleNumber: 6,
     Popularity: 29,
+    discountPercentage: "",
   },
   {
     id: 30,
@@ -298,6 +327,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 9,
     Popularity: 30,
+    discountPercentage: "7",
   },
   {
     id: 31,
@@ -308,6 +338,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 16,
     Popularity: 31,
+    discountPercentage: "",
   },
   {
     id: 32,
@@ -318,6 +349,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 10,
     Popularity: 32,
+    discountPercentage: "",
   },
   {
     id: 33,
@@ -328,6 +360,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 17,
     Popularity: 33,
+    discountPercentage: "8",
   },
   {
     id: 34,
@@ -338,6 +371,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 12,
     Popularity: 34,
+    discountPercentage: "",
   },
   {
     id: 35,
@@ -348,6 +382,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 18,
     Popularity: 35,
+    discountPercentage: "11",
   },
   {
     id: 36,
@@ -358,6 +393,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 19,
     Popularity: 36,
+    discountPercentage: "",
   },
   {
     id: 37,
@@ -368,6 +404,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 20,
     Popularity: 37,
+    discountPercentage: "10",
   },
   {
     id: 38,
@@ -378,6 +415,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 21,
     Popularity: 38,
+    discountPercentage: "",
   },
   {
     id: 39,
@@ -388,6 +426,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 22,
     Popularity: 39,
+    discountPercentage: "",
   },
   {
     id: 40,
@@ -398,6 +437,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 23,
     Popularity: 40,
+    discountPercentage: "21",
   },
   {
     id: 41,
@@ -408,6 +448,7 @@ export const productsData = [
     type: "mobile",
     saleNumber: 24,
     Popularity: 41,
+    discountPercentage: "",
   },
   {
     id: 42,
@@ -418,6 +459,7 @@ export const productsData = [
     type: "laptop",
     saleNumber: 13,
     Popularity: 42,
+    discountPercentage: "8",
   },
 ];
 

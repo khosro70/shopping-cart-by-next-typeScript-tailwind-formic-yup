@@ -54,10 +54,10 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           <span className="ml-2">/</span>
           <span className="ml-2 opacity-40">کالای دیجیتال</span>
           <span className="ml-2">/</span>
-          <span className="ml-2">ساعت مچی</span>
+          <span className="ml-2">{type === "watch" ? "ساعت مچی" : null}{type === "laptop" ? "لپ تاپ" : null}{type === "mobile" ? "موبایل" : null}</span>
         </div>
-        {/* image and price */}
         <div className="flex flex-col md:flex-row gap-2">
+          {/* image */}
           <div className="w-full md:w-4/6 lg:w-2/5 bg-gray-50 p-2 pr-0 h-fit">
             <Image
               className="w-full rounded"
@@ -68,8 +68,9 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
             ></Image>
           </div>
           <div className="flex flex-col md:w-2/6 lg:flex-row lg:w-3/5 gap-2">
-            <div className="bg-gray-50 w-full lg:w-7/12 p-2 rounded">
-              <p className="border-b pb-2 text-center font-bold text-lg">
+            {/* name and others */}
+            <div className="bg-gray-50 w-full lg:w-7/12 p-2 rounded mb-4 lg:mb-0">
+              <p className="border-b pb-2 text-center font-bold text-lg md:text-sm lg:text-lg">
                 {name}
               </p>
               <div className="text-xs flex mb-2 mt-3 lg:mb-5 lg:mt-5">
@@ -99,7 +100,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                     <span
                       key={index}
                       onClick={() => handleSpanClick(index)}
-                      className={`w-3 h-3 lg:w-6 lg:h-6 ml-2 ${
+                      className={`w-4 h-4 md:w-4 md:h-4 lg:w-6 lg:h-6 ml-2 ${
                         selectedSpan === index ? "ring-2 ring-offset-1" : null
                       } ${index === 0 ? "bg-red-400" : null} ${
                         index === 1 ? "bg-yellow-400" : null
@@ -115,6 +116,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                 </div>
               </div>
             </div>
+            {/* price and add to shoppingBasket */}
             <div className="bg-gray-50 w-full lg:w-5/12 p-2 rounded text-sm">
               <div className="flex justify-between mb-3 pb-2 border-b">
                 <span>فروشنده:</span>
