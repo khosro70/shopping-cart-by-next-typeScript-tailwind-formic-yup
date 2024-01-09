@@ -34,6 +34,9 @@ const config: Config = {
         "16": "16",
         "17": "17",
       },
+      gridTemplateColumns: {
+        "16": "repeat(16, minmax(0, 1fr))",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

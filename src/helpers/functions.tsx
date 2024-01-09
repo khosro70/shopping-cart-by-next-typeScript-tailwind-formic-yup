@@ -47,3 +47,27 @@ export const comparePricesLowToHigh = (
     return 0;
   }
 };
+
+export function calculateDiscountedPrice(
+  initialPrice: string | undefined,
+  discountPercentage: string
+): number | string | undefined {
+  let parsedInitialPrice: number | undefined;
+  if (typeof initialPrice === "string") {
+    parsedInitialPrice = parseFloat(initialPrice.replace(/,/g, ""));
+  }
+  const parsedInitialDiscountPercentage = parseFloat(discountPercentage);
+
+  if (discountPercentage === undefined) {
+    return initialPrice;
+  }
+  if (parsedInitialPrice !== undefined) {
+    const discountAmount: number =
+      (parsedInitialPrice * parsedInitialDiscountPercentage) / 100;
+    const discountedPrice: number = parsedInitialPrice - discountAmount;
+    const formattedDiscountedPrice: string = englishNumbersToPersian(
+      discountedPrice.toLocaleString()
+    );
+    return formattedDiscountedPrice;
+  }
+}

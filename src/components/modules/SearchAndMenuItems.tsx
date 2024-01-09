@@ -7,7 +7,7 @@ const SearchAndMenuItems: React.FC = () => {
   return (
     <>
       <div className="flex justify-center items-center">
-        <Link className="ml-4" href="#">
+        <Link href="/" className="ml-4">
           <DigitaizIcon />
         </Link>
         <ul className="hidden lg:flex justify-center items-center text-slate-800 lg:text-sm xl:text-base">
