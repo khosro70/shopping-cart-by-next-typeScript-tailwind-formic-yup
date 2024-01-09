@@ -1,5 +1,5 @@
-import productFilterReducer from "../ReduxToolkit/features/productFilterSlice";
 
+import productFilterReducer from "../ReduxToolkit/features/productFilterSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const makeStore = () => {
