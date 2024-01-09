@@ -50,7 +50,7 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
       </p>
       <hr />
       <Link
-        href="#"
+        href={`/${id}`}
         className="flex bottom-1 justify-center p-3 rounded w-full font-bold text-orange-800 text-lg hover:bg-gray-300"
       >
         مشاهده و سفارش
