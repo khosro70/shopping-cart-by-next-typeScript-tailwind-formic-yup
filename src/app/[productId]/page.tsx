@@ -16,6 +16,7 @@ import {
   calculateDiscountedPrice,
   englishNumbersToPersian,
 } from "@/helpers/functions";
+import SimilarProductPagination from "@/components/modules/SimilarProductPagination";
 
 interface ProductPagePropsInterface {
   params: {
@@ -125,7 +126,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                   type="checkbox"
                   className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
                 />
-                <span className="mr-2">یمه تجهیزات دیجیتال - بیمه پارسیان</span>
+                <span className="mr-2">بیمه تجهیزات دیجیتال - بیمه پارسیان</span>
               </div>
             </div>
             {/* price and add to shoppingBasket */}
@@ -173,6 +174,12 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           </div>
         </div>
         {/* similarProducts */}
+        <div className="mt-5">
+          <span className="mb-3 block w-fit text-lg font-medium border-b-2 pb-2 border-orange-500">
+            کالاهای مشابه
+          </span>
+          <SimilarProductPagination />
+        </div>
       </main>
     </div>
   );

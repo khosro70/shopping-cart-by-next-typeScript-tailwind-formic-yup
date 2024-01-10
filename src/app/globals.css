@@ -44,3 +44,17 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #585656;
 }
+
+/* styles for navigation buttons of similar products */
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  @apply bg-slate-400 rounded-full text-gray-50 border-2 flex justify-center items-center p-7;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.25rem;
+}
+
+.mySwiper .swiper-button-prev:hover,
+.mySwiper .swiper-button-next:hover {
+  @apply bg-slate-600
+}
