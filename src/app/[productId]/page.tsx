@@ -50,15 +50,19 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
       <main className="h-[1200px] container mx-auto mt-[105px] px-4">
         {/* bread crump */}
         <div className="flex justify-start px-3 py-2 bg-gray-50 rounded mb-2">
-          <span className="ml-2 opacity-40">دیجی تایز</span>
+          <span className="ml-2">دیجی تایز</span>
           <span className="ml-2">/</span>
-          <span className="ml-2 opacity-40">کالای دیجیتال</span>
+          <span className="ml-2">کالای دیجیتال</span>
           <span className="ml-2">/</span>
-          <span className="ml-2">{type === "watch" ? "ساعت مچی" : null}{type === "laptop" ? "لپ تاپ" : null}{type === "mobile" ? "موبایل" : null}</span>
+          <span className="ml-2 opacity-40">
+            {type === "watch" ? "ساعت مچی" : null}
+            {type === "laptop" ? "لپ تاپ" : null}
+            {type === "mobile" ? "موبایل" : null}
+          </span>
         </div>
-        <div className="flex flex-col md:flex-row gap-2">
+        <div className="flex flex-col lg:flex-row gap-2">
           {/* image */}
-          <div className="w-full md:w-4/6 lg:w-2/5 bg-gray-50 p-2 pr-0 h-fit">
+          <div className="w-full lg:w-2/5 bg-gray-50 p-2 pr-0 h-fit">
             <Image
               className="w-full rounded"
               src={`/images/${image}`}
@@ -67,7 +71,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
               height={150}
             ></Image>
           </div>
-          <div className="flex flex-col md:w-2/6 lg:flex-row lg:w-3/5 gap-2">
+          <div className="flex flex-col w-full md:flex-row lg:w-3/5 gap-2">
             {/* name and others */}
             <div className="bg-gray-50 w-full lg:w-7/12 p-2 rounded mb-4 lg:mb-0">
               <p className="border-b pb-2 text-center font-bold text-lg md:text-sm lg:text-lg">
@@ -93,6 +97,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                   ۷۸% (۲۹۰ نفر) از خریداران، این کالا را پیشنهاد کرده‌اند.
                 </span>
               </div>
+              {/* colors */}
               <div>
                 <p>رنگ ها:</p>
                 <div className="flex mt-1 lg:mt-2">
@@ -115,32 +120,39 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                   ))}
                 </div>
               </div>
+              <div className="mt-5">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
+                />
+                <span className="mr-2">یمه تجهیزات دیجیتال - بیمه پارسیان</span>
+              </div>
             </div>
             {/* price and add to shoppingBasket */}
             <div className="bg-gray-50 w-full lg:w-5/12 p-2 rounded text-sm">
-              <div className="flex justify-between mb-3 pb-2 border-b">
+              <div className="flex justify-between mb-3 pb-3 border-b">
                 <span>فروشنده:</span>
                 <span className="text-green-950">دیجی تایز</span>
               </div>
-              <span className="flex text-start align-baseline mb-3 pb-2 border-b">
+              <span className="flex text-start align-baseline mb-3 pb-3 border-b">
                 <IoShieldCheckmarkSharp size={16} color="red" />
                 <span className="text-xs mr-2">
                   گارانتی ۱۸ ماهه تراشه افزار تات
                 </span>
               </span>
-              <div className="flex justify-start align-center mb-3 pb-2 border-b">
+              <div className="flex justify-start align-center mb-3 pb-3 border-b">
                 <TbTruckDelivery size={16} color="green" />
                 <span className="text-xs mr-2">
                   ارسال امروز (فعلا در شهر تهران و کرج)
                 </span>
               </div>
-              <div className="flex pb-2 border-b">
+              <div className="flex pb-3 border-b">
                 <FaExclamationCircle size={16} color="green" />
                 <span className="mr-2 text-green-950">
                   بهترین قیمت در ۳۰ روز گذشته
                 </span>
               </div>
-              <div className="flex flex-col justify-center items-end ml-5 mt-2">
+              <div className="flex flex-col justify-center items-end ml-5 mt-3">
                 <div className="flex mb-1">
                   <span className="opacity-60 line-through">
                     {price ? englishNumbersToPersian(price) : ""}
@@ -154,9 +166,13 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                   <span></span>
                 </div>
               </div>
+              <button className="mt-3 xl:mt-12 rounded bg-orange-800 p-2 text-slate-50 flex justify-center items-center w-full">
+                افزودن به سبد خرید
+              </button>
             </div>
           </div>
         </div>
+        {/* similarProducts */}
       </main>
     </div>
   );

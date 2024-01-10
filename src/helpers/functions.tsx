@@ -16,6 +16,7 @@ export function englishNumbersToPersian(input: string): string {
 
   return input.replace(/[0-9]/g, (char) => persianNumbers[char]);
 }
+
 export const comparePricesHighToLow = (
   a: productInterface,
   b: productInterface
