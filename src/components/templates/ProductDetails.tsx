@@ -9,6 +9,7 @@ const ProductDetails: React.FC<ProductDetailsInterfaceProps> = ({
   name,
   price,
   image,
+  colors,
 }) => {
   return (
     <div className="flex flex-col lg:flex-row gap-2">
@@ -25,7 +26,7 @@ const ProductDetails: React.FC<ProductDetailsInterfaceProps> = ({
       </div>
       <div className="flex flex-col w-full md:flex-row lg:w-3/5 gap-2">
         {/* name and datails */}
-        <NameAdnDeateils name={name} />
+        <NameAdnDeateils name={name} colors={colors} />
         {/* price and addTo Basket */}
         <PriceAndAddtoBasket price={price} />
       </div>

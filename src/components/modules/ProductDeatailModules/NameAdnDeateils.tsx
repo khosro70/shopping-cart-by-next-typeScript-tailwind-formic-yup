@@ -5,9 +5,18 @@ import { FaCheck, FaThumbsUp } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 interface NameAdnDeateilsInterpaceProps {
   name: string | undefined;
+  colors: string[] | undefined;
 }
-const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({ name }) => {
-  const [selectedSpan, setSelectedSpan] = useState<number | null>(2);
+const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({
+  name,
+  colors,
+}) => {
+  let indextActive;
+  colors ? (indextActive = colors.length - 1) : null;
+
+  const [selectedSpan, setSelectedSpan] = useState<number | null>(
+    indextActive || 1
+  );
   const handleSpanClick = (index: number | null): void => {
     setSelectedSpan(index);
   };
@@ -41,21 +50,27 @@ const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({ name }) => {
         <div>
           <p>رنگ ها:</p>
           <div className="flex mt-1 lg:mt-2">
-            {[0, 1, 2].map((index) => (
-              <span
-                key={index}
-                onClick={() => handleSpanClick(index)}
-                className={`w-4 h-4 md:w-4 md:h-4 lg:w-6 lg:h-6 ml-2 ${
-                  selectedSpan === index ? "ring-2 ring-offset-1" : null
-                } ${index === 0 ? "bg-red-400" : null} ${
-                  index === 1 ? "bg-yellow-400" : null
-                } ${
-                  index === 2 ? "bg-blue-400" : null
-                } rounded-full overflow-hidden p-[4px] flex justify-center items-center`}
-              >
-                {selectedSpan === index && <FaCheck className="text-white" />}
-              </span>
-            ))}
+            {colors
+              ? colors.map((item, index) => (
+                  <span
+                    key={index}
+                    onClick={() => handleSpanClick(index)}
+                    className={`w-4 h-4 md:w-4 md:h-4 lg:w-6 lg:h-6 ml-2 ${
+                      selectedSpan === index ? "ring-2 ring-offset-1" : null
+                    } ${item === "قرمز" ? "bg-red-400" : null} ${
+                      item === "زرد" ? "bg-yellow-400" : null
+                    } ${item === "صورتی" ? "bg-pink-400" : null} ${
+                      item === "آبی" ? "bg-blue-400" : null
+                    } ${item === "سبز" ? "bg-green-400" : null} ${
+                      item === "نارنجی" ? "bg-orange-400" : null
+                    } rounded-full overflow-hidden p-[4px] flex justify-center items-center`}
+                  >
+                    {selectedSpan === index && (
+                      <FaCheck className="text-white" />
+                    )}
+                  </span>
+                ))
+              : null}
           </div>
         </div>
         <div className="mt-5">

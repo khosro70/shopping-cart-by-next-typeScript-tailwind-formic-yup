@@ -23,6 +23,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
 
   let name, price, image, brand, type: string | undefined;
   let saleNumber, Popularity: number;
+  let colors: string[] | undefined;
 
   if (product) {
     name = product.name;
@@ -32,6 +33,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
     type = product.type;
     saleNumber = product.saleNumber;
     Popularity = product.Popularity;
+    colors = product.colors;
   }
 
   return (
@@ -57,6 +59,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           image={image}
           brand={brand}
           type={type}
+          colors={colors}
         />
         {/* similarProducts */}
         <div className="mt-5">

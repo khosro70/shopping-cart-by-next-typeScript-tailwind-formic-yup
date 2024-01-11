@@ -25,6 +25,7 @@ export interface ProductDetailsInterfaceProps {
   image: string | undefined;
   brand: string | undefined;
   type: string | undefined;
+  colors: string[] | undefined;
 }
 
 export interface productInterface {
