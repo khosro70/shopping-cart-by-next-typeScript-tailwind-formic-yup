@@ -16,7 +16,7 @@ const ProductItemForSimilarProduct: React.FC<ProductInterfaceProps> = ({ data })
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col p-2 hover:shadow-2xl">
+    <div className="bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl">
       <Image
         className="mb-2 rounded w-full"
         src={`/images/${image}`}
@@ -48,7 +48,7 @@ const ProductItemForSimilarProduct: React.FC<ProductInterfaceProps> = ({ data })
       <p className="text-end text-orange-700 mb-2 text-sm">
         {englishNumbersToPersian(price)} تومان
       </p>
-      <hr />
+      <hr className="mb-1" />
       <Link
         href={`/${id}`}
         className="flex bottom-1 justify-center p-1 rounded w-full font-bold text-orange-800 text-sm hover:bg-gray-300"

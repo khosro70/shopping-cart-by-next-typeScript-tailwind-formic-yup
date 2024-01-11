@@ -58,7 +58,6 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           brand={brand}
           type={type}
         />
-
         {/* similarProducts */}
         <div className="mt-5">
           <span className="mb-3 block w-fit text-lg font-medium border-b-2 pb-2 border-orange-500">

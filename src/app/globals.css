@@ -56,5 +56,27 @@ body {
 
 .mySwiper .swiper-button-prev:hover,
 .mySwiper .swiper-button-next:hover {
-  @apply bg-slate-600
+  @apply bg-slate-600;
+}
+
+@media screen and (min-width: 300px) {
+  .mySwiper .swiper-container {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .mySwiper .swiper-container {
+    width: 640px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mySwiper .swiper-container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .mySwiper .swiper-container {
+    width: 1024px;
+  }
 }

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -26,6 +25,20 @@ const SimilarProductPagination: React.FC<
         slidesPerView={6}
         navigation
         className="mySwiper"
+        breakpoints={{
+          300: {
+            slidesPerView: 1,
+          },
+          640: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 6,
+          },
+        }}
       >
         {filterDataForSimilarProduct(type).map((item) => (
           <SwiperSlide key={item.id}>
