@@ -1,8 +1,8 @@
 "use client";
-import DesktopNavbar from "@/components/modules/DesktopNavbar";
-import Header from "@/components/modules/Header";
-import NavFilters from "@/components/modules/NavFilters";
-import Products from "@/components/modules/Products";
+import DesktopNavbar from "@/components/modules/homePageModules/DesktopNavbar";
+import Header from "@/components/modules/shared/Header";
+import NavFilters from "@/components/modules/homePageModules/NavFilters";
+import Products from "@/components/modules/homePageModules/Products";
 import { makeStore } from "@/ReduxToolkit/store";
 
 import { NextPage } from "next";

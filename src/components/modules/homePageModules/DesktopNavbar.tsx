@@ -3,11 +3,11 @@
 import React from "react";
 import CategoryInNavbar from "./CategoryInNavbar";
 import ProductBrands from "./ProductBrands";
-import ProductColors from "./ProductColors";
+import ProductColors from "../shared/ProductColors";
 import Image from "next/image";
 
 // images
-import DesktopNavbarBaner from "../../../public/images/BannerInNavbar.png";
+import DesktopNavbarBaner from "../../../../public/images/BannerInNavbar.png";
 import Link from "next/link";
 
 const DesktopNavbar: React.FC = () => {

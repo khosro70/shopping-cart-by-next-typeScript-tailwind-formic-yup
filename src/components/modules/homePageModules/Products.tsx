@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Product from "./Product";
+import Product from "../shared/Product";
 import { useAppSelector } from "@/ReduxToolkit/hooks";
 import { productInterface } from "@/helpers/conteracts";
 

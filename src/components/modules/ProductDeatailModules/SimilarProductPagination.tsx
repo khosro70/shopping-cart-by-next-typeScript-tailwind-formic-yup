@@ -8,8 +8,16 @@ import "swiper/css/scrollbar";
 import { Navigation, Pagination } from "swiper/modules";
 import { productsData } from "@/helpers/Datas";
 import ProductItemForSimilarProduct from "./ProductItemForSimilarProduct";
+interface SimilarProductPaginationInterfaceProps {
+  type: string | undefined;
+}
 
-const SimilarProductPagination: React.FC = () => {
+const SimilarProductPagination: React.FC<
+  SimilarProductPaginationInterfaceProps
+> = ({ type }) => {
+  const filterDataForSimilarProduct = (type: any) => {
+    return productsData.filter((product) => product.type === type);
+  };
   return (
     <>
       <Swiper
@@ -19,7 +27,7 @@ const SimilarProductPagination: React.FC = () => {
         navigation
         className="mySwiper"
       >
-        {productsData.map((item) => (
+        {filterDataForSimilarProduct(type).map((item) => (
           <SwiperSlide key={item.id}>
             <ProductItemForSimilarProduct key={item.id} data={item} />
           </SwiperSlide>

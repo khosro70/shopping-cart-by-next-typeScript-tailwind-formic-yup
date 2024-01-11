@@ -1,11 +1,11 @@
 "use client";
 // components
-import BurgerMenu from "@/components/modules/BurgerMenu";
+import BurgerMenu from "@/components/modules/homePageModules/BurgerMenu";
 
 import { BurgerIcon, LoginIcon, ShoppingCartIcon } from "@/helpers/Icons";
 import Link from "next/link";
 import { useState } from "react";
-import SearchAndMenuItems from "./SearchAndMenuItems";
+import SearchAndMenuItems from "../homePageModules/SearchAndMenuItems";
 
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);

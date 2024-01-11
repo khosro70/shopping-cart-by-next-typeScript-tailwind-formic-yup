@@ -18,6 +18,14 @@ export interface ProductInterfaceProps {
   };
 }
 
+export interface ProductDetailsInterfaceProps {
+  name: string | undefined;
+  price: string | undefined;
+  image: string | undefined;
+  brand: string | undefined;
+  type: string | undefined;
+}
+
 export interface productInterface {
   id: number;
   name: string;
