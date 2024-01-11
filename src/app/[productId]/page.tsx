@@ -17,6 +17,23 @@ import {
   englishNumbersToPersian,
 } from "@/helpers/functions";
 import SimilarProductPagination from "@/components/modules/SimilarProductPagination";
+import {
+  DigiMehr,
+  Digiclub,
+  Digiexpress,
+  Digify,
+  DigikalaBusiness,
+  DigikalaService,
+  Digimag,
+  Diginext,
+  Digipay,
+  Digiplus,
+  Digistyle,
+  Ganjeh,
+  Jet,
+  Magnet,
+  Smartech,
+} from "@/helpers/Icons";
 
 interface ProductPagePropsInterface {
   params: {
@@ -48,7 +65,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
   return (
     <div>
       <Header />
-      <main className="h-[1200px] container mx-auto mt-[105px] px-4">
+      <main className="container mx-auto mt-[105px] px-4">
         {/* bread crump */}
         <div className="flex justify-start px-3 py-2 bg-gray-50 rounded mb-2">
           <span className="ml-2">دیجی تایز</span>
@@ -126,7 +143,9 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
                   type="checkbox"
                   className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
                 />
-                <span className="mr-2">بیمه تجهیزات دیجیتال - بیمه پارسیان</span>
+                <span className="mr-2">
+                  بیمه تجهیزات دیجیتال - بیمه پارسیان
+                </span>
               </div>
             </div>
             {/* price and add to shoppingBasket */}
@@ -181,6 +200,54 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           <SimilarProductPagination />
         </div>
       </main>
+      {/* footer */}
+      <footer className="mt-8 flex flex-wrap">
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digiclub />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digiexpress />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digify />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <DigikalaBusiness />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <DigikalaService />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digimag />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <DigiMehr />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Diginext />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digipay />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digiplus />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Digistyle />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Ganjeh />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Jet />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Magnet />
+        </span>
+        <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
+          <Smartech />
+        </span>
+      </footer>
     </div>
   );
 };
