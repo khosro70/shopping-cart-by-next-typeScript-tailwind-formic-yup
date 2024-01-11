@@ -1,3 +1,4 @@
+// colors:["قرمز","نارنجی","زرد","سبز","آبی","صورتی"]
 export const productsData = [
   {
     id: 1,
@@ -9,6 +10,7 @@ export const productsData = [
     saleNumber: 1,
     Popularity: 1,
     discountPercentage: "",
+    colors: ["آبی", "صورتی"],
   },
   {
     id: 2,
@@ -20,6 +22,7 @@ export const productsData = [
     saleNumber: 1,
     Popularity: 2,
     discountPercentage: "5",
+    colors: ["قرمز", "نارنجی", "آبی"],
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ export const productsData = [
     saleNumber: 1,
     Popularity: 3,
     discountPercentage: "",
+    colors: ["سبز"],
   },
   {
     id: 4,
@@ -42,6 +46,7 @@ export const productsData = [
     saleNumber: 2,
     Popularity: 4,
     discountPercentage: "14",
+    colors: ["قرمز", "سبز", "آبی", "صورتی"],
   },
   {
     id: 5,
@@ -53,6 +58,7 @@ export const productsData = [
     saleNumber: 2,
     Popularity: 5,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "آبی"],
   },
   {
     id: 6,
@@ -64,6 +70,7 @@ export const productsData = [
     saleNumber: 2,
     Popularity: 6,
     discountPercentage: "24",
+    colors: ["قرمز", "نارنجی"],
   },
   {
     id: 7,
@@ -75,6 +82,7 @@ export const productsData = [
     saleNumber: 3,
     Popularity: 7,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "زرد", "صورتی"],
   },
   {
     id: 8,
@@ -86,6 +94,7 @@ export const productsData = [
     saleNumber: 3,
     Popularity: 8,
     discountPercentage: "5",
+    colors: ["قرمز"],
   },
   {
     id: 9,
@@ -97,6 +106,7 @@ export const productsData = [
     saleNumber: 3,
     Popularity: 9,
     discountPercentage: "",
+    colors: ["زرد", "صورتی"],
   },
   {
     id: 10,
@@ -108,6 +118,7 @@ export const productsData = [
     saleNumber: 4,
     Popularity: 10,
     discountPercentage: "2",
+    colors: ["قرمز", "نارنجی", "صورتی"],
   },
   {
     id: 11,
@@ -119,6 +130,7 @@ export const productsData = [
     saleNumber: 4,
     Popularity: 11,
     discountPercentage: "",
+    colors: ["سبز", "آبی"],
   },
   {
     id: 12,
@@ -130,6 +142,7 @@ export const productsData = [
     saleNumber: 5,
     Popularity: 12,
     discountPercentage: "7",
+    colors: ["قرمز", "نارنجی", "زرد"],
   },
   {
     id: 13,
@@ -141,6 +154,7 @@ export const productsData = [
     saleNumber: 5,
     Popularity: 13,
     discountPercentage: "",
+    colors: ["آبی", "صورتی"],
   },
   {
     id: 14,
@@ -152,6 +166,7 @@ export const productsData = [
     saleNumber: 6,
     Popularity: 14,
     discountPercentage: "25",
+    colors: ["قرمز", "نارنجی", "زرد", "سبز"],
   },
   {
     id: 15,
@@ -163,6 +178,7 @@ export const productsData = [
     saleNumber: 7,
     Popularity: 15,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "زرد"],
   },
   {
     id: 16,
@@ -174,6 +190,7 @@ export const productsData = [
     saleNumber: 8,
     Popularity: 16,
     discountPercentage: "12",
+    colors: ["زرد", "سبز"],
   },
   {
     id: 17,
@@ -185,6 +202,7 @@ export const productsData = [
     saleNumber: 9,
     Popularity: 17,
     discountPercentage: "20",
+    colors: ["سبز", "آبی", "صورتی"],
   },
   {
     id: 18,
@@ -196,6 +214,7 @@ export const productsData = [
     saleNumber: 10,
     Popularity: 18,
     discountPercentage: "",
+    colors: ["آبی", "صورتی"],
   },
   {
     id: 19,
@@ -207,6 +226,7 @@ export const productsData = [
     saleNumber: 11,
     Popularity: 19,
     discountPercentage: "",
+    colors: ["سبز"],
   },
   {
     id: 20,
@@ -218,6 +238,7 @@ export const productsData = [
     saleNumber: 12,
     Popularity: 20,
     discountPercentage: "8",
+    colors: ["قرمز", "نارنجی", "زرد"],
   },
   {
     id: 21,
@@ -229,6 +250,7 @@ export const productsData = [
     saleNumber: 6,
     Popularity: 21,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی"],
   },
   {
     id: 22,
@@ -240,6 +262,7 @@ export const productsData = [
     saleNumber: 13,
     Popularity: 22,
     discountPercentage: "6",
+    colors: ["قرمز"],
   },
   {
     id: 23,
@@ -251,6 +274,7 @@ export const productsData = [
     saleNumber: 4,
     Popularity: 23,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "زرد", "سبز"],
   },
   {
     id: 24,
@@ -262,6 +286,7 @@ export const productsData = [
     saleNumber: 7,
     Popularity: 24,
     discountPercentage: "8",
+    colors: ["زرد", "سبز"],
   },
   {
     id: 25,
@@ -273,6 +298,7 @@ export const productsData = [
     saleNumber: 14,
     Popularity: 25,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "زرد"],
   },
   {
     id: 26,
@@ -284,6 +310,7 @@ export const productsData = [
     saleNumber: 5,
     Popularity: 26,
     discountPercentage: "41",
+    colors: ["نارنجی", "زرد"],
   },
   {
     id: 27,
@@ -295,6 +322,7 @@ export const productsData = [
     saleNumber: 8,
     Popularity: 27,
     discountPercentage: "16",
+    colors: ["زرد"],
   },
   {
     id: 28,
@@ -306,6 +334,7 @@ export const productsData = [
     saleNumber: 15,
     Popularity: 28,
     discountPercentage: "",
+    colors: ["سبز", "آبی", "صورتی"],
   },
   {
     id: 29,
@@ -317,6 +346,7 @@ export const productsData = [
     saleNumber: 6,
     Popularity: 29,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی"],
   },
   {
     id: 30,
@@ -328,6 +358,7 @@ export const productsData = [
     saleNumber: 9,
     Popularity: 30,
     discountPercentage: "7",
+    colors: ["زرد", "سبز", "آبی"],
   },
   {
     id: 31,
@@ -339,6 +370,7 @@ export const productsData = [
     saleNumber: 16,
     Popularity: 31,
     discountPercentage: "",
+    colors: ["قرمز", "نارنجی", "زرد"],
   },
   {
     id: 32,
@@ -350,6 +382,7 @@ export const productsData = [
     saleNumber: 10,
     Popularity: 32,
     discountPercentage: "",
+    colors: ["سبز", "آبی", "صورتی"],
   },
   {
     id: 33,
@@ -361,6 +394,7 @@ export const productsData = [
     saleNumber: 17,
     Popularity: 33,
     discountPercentage: "8",
+    colors: ["سبز", "صورتی"],
   },
   {
     id: 34,
@@ -372,6 +406,7 @@ export const productsData = [
     saleNumber: 12,
     Popularity: 34,
     discountPercentage: "",
+    colors: ["صورتی"],
   },
   {
     id: 35,
@@ -383,6 +418,7 @@ export const productsData = [
     saleNumber: 18,
     Popularity: 35,
     discountPercentage: "11",
+    colors: ["قرمز", "نارنجی", "زرد", "سبز"],
   },
   {
     id: 36,
@@ -394,6 +430,7 @@ export const productsData = [
     saleNumber: 19,
     Popularity: 36,
     discountPercentage: "",
+    colors: ["سبز", "آبی", "صورتی"],
   },
   {
     id: 37,
@@ -405,6 +442,7 @@ export const productsData = [
     saleNumber: 20,
     Popularity: 37,
     discountPercentage: "10",
+    colors: ["زرد", "سبز"],
   },
   {
     id: 38,
@@ -416,6 +454,7 @@ export const productsData = [
     saleNumber: 21,
     Popularity: 38,
     discountPercentage: "",
+    colors: ["سبز", "آبی", "صورتی"],
   },
   {
     id: 39,
@@ -427,6 +466,7 @@ export const productsData = [
     saleNumber: 22,
     Popularity: 39,
     discountPercentage: "",
+    colors: ["قرمز", "صورتی"],
   },
   {
     id: 40,
@@ -438,6 +478,7 @@ export const productsData = [
     saleNumber: 23,
     Popularity: 40,
     discountPercentage: "21",
+    colors: ["زرد", "سبز", "آبی", "صورتی"],
   },
   {
     id: 41,
@@ -449,6 +490,7 @@ export const productsData = [
     saleNumber: 24,
     Popularity: 41,
     discountPercentage: "",
+    colors: ["قرمز", "صورتی"],
   },
   {
     id: 42,
@@ -460,6 +502,7 @@ export const productsData = [
     saleNumber: 13,
     Popularity: 42,
     discountPercentage: "8",
+    colors: ["سبز", "آبی", "صورتی"],
   },
 ];
 
@@ -479,17 +522,17 @@ export const menuItems = [
   {
     id: "2",
     href: "#",
-    text: "تلفن همراه",
+    text: "کالای دیجیتال",
   },
   {
     id: "3",
     href: "#",
-    text: "لپ تاپ",
+    text: "پوشاک",
   },
   {
     id: "4",
     href: "#",
-    text: "ساعت هوشمند",
+    text: "سلامتی و زیبایی",
   },
   {
     id: "5",

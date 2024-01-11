@@ -9,8 +9,9 @@ import { ProductInterfaceProps } from "@/helpers/conteracts";
 import { englishNumbersToPersian } from "@/helpers/functions";
 
 const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
-  const [selectedSpan, setSelectedSpan] = useState<number | null>(2);
-  const { id, name, price, image, brand } = data;
+  const { id, name, price, image, brand, colors } = data;
+  let indextActive = colors.length - 1;
+  const [selectedSpan, setSelectedSpan] = useState<number | null>(indextActive);
   const handleSpanClick = (index: number | null): void => {
     setSelectedSpan(index);
   };
@@ -27,7 +28,24 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
       <div className="flex justify-between items-center w-full mb-3">
         <span className="opacity-60">{brand}</span>
         <div className="flex">
-          {[0, 1, 2].map((index) => (
+          {colors.map((item, index) => (
+            <span
+              key={index}
+              onClick={() => handleSpanClick(index)}
+              className={`w-5 h-5 ${
+                selectedSpan === index ? "ring-2 ring-offset-1" : null
+              } ${item === "قرمز" ? "bg-red-400" : null} ${
+                item === "زرد" ? "bg-yellow-400" : null
+              } ${item === "صورتی" ? "bg-pink-400" : null} ${
+                item === "آبی" ? "bg-blue-400" : null
+              } ${item === "سبز" ? "bg-green-400" : null} ${
+                item === "نارنجی" ? "bg-orange-400" : null
+              } rounded-full overflow-hidden p-[4px] flex justify-center items-center`}
+            >
+              {selectedSpan === index && <FaCheck className="text-white" />}
+            </span>
+          ))}
+          {/* {[0, 1, 2].map((index) => (
             <span
               key={index}
               onClick={() => handleSpanClick(index)}
@@ -41,7 +59,7 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
             >
               {selectedSpan === index && <FaCheck className="text-white" />}
             </span>
-          ))}
+          ))} */}
         </div>
       </div>
       <p className="text-right mb-3 text-lg">{name}</p>

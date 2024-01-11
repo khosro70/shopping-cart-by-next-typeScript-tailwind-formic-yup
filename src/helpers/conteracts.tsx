@@ -15,6 +15,7 @@ export interface ProductInterfaceProps {
     image: string;
     brand: string;
     type: string;
+    colors: string[];
   };
 }
 
@@ -35,6 +36,7 @@ export interface productInterface {
   type: string;
   saleNumber: number;
   Popularity: number;
+  colors: string[];
 }
 
 export interface CategoryItemInNavbarPropsInterface {
