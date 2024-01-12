@@ -523,7 +523,7 @@ export const productsData = [
 ];
 
 export const itemsInNavFilter = [
-  { id: 0, text: "تمام محصولات" },
+  { id: 0, text: "همه ی محصولات" },
   { id: 1, text: "محبوب ترین ها" },
   { id: 2, text: "گران ترین ها" },
   { id: 3, text: "ارزان ترین ها" },
@@ -532,7 +532,7 @@ export const itemsInNavFilter = [
 export const menuItems = [
   {
     id: "1",
-    href: "#",
+    href: "/",
     text: "خانه",
   },
   {

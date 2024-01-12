@@ -15,6 +15,7 @@ export interface ProductInterfaceProps {
     image: string;
     brand: string;
     type: string;
+    discountPercentage: string;
     colors: string[];
   };
 }
@@ -38,6 +39,7 @@ export interface productInterface {
   saleNumber: number;
   Popularity: number;
   colors: string[];
+  discountPercentage: string;
 }
 
 export interface CategoryItemInNavbarPropsInterface {

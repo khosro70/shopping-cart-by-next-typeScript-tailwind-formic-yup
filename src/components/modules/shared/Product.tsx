@@ -9,7 +9,7 @@ import { ProductInterfaceProps } from "@/helpers/conteracts";
 import { englishNumbersToPersian } from "@/helpers/functions";
 
 const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
-  const { id, name, price, image, brand, colors } = data;
+  const { id, name, price, image, brand, colors, discountPercentage } = data;
   let indextActive = colors.length - 1;
   const [selectedSpan, setSelectedSpan] = useState<number | null>(indextActive);
   const handleSpanClick = (index: number | null): void => {
@@ -17,7 +17,13 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl">
+    <div className="relative bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl">
+      {discountPercentage ? (
+        <span className="absolute top-2 right-2 bg-red-700 text-slate-50 p-1 rounded-full">
+          {discountPercentage} %
+        </span>
+      ) : null}
+
       <Image
         className="mb-4 rounded w-full"
         src={`/images/${image}`}

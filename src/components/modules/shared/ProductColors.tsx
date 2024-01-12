@@ -1,6 +1,6 @@
 "use client";
 
-import { colorFilterProducts } from "@/ReduxToolkit/features/productFilterSlice";
+import { setProductcolor } from "@/ReduxToolkit/features/productFilterSlice";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { colorsCheckboxItem } from "@/helpers/Datas";
 import { ProductColorIcon, ShevronIcon } from "@/helpers/Icons";
@@ -21,7 +21,8 @@ const ProductBrands: React.FC = () => {
     } else {
       colors = colors.filter((item) => item !== newColor);
     }
-    dispatch(colorFilterProducts(colors));
+    dispatch(setProductcolor(colors));
+    console.log(colors);
   };
 
   return (

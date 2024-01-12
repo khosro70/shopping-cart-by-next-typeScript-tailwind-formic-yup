@@ -1,6 +1,6 @@
 "use client";
 
-import { brandFilterProducts } from "@/ReduxToolkit/features/productFilterSlice";
+import { setProductBrand } from "@/ReduxToolkit/features/productFilterSlice";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { productBrandItems } from "@/helpers/Datas";
 import { ProductBrandIcon, ShevronIconBrand } from "@/helpers/Icons";
@@ -21,8 +21,8 @@ const ProductBrands: React.FC = () => {
     } else {
       brands = brands.filter((item) => item !== newBrand);
     }
-
-    dispatch(brandFilterProducts(brands));
+    dispatch(setProductBrand(brands));
+    // console.log(object);
   };
 
   return (

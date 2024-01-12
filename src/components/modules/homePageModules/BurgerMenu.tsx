@@ -40,12 +40,11 @@ const BurgerMenu: React.FC<BurgerMenuInterfaceProps> = ({
         <div>
           <ul className="flex flex-col text-slate-800 text-base">
             {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className="mx-2 my-1 font-medium hover:bg-blue-100 p-1 rounded"
-              >
-                <Link href={item.href}>{item.text}</Link>
-              </li>
+              <Link key={item.id} href={item.href}>
+                <li className="mx-2 my-1 font-medium hover:bg-blue-100 p-1 rounded">
+                  {item.text}
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
