@@ -26,6 +26,7 @@ const Home: NextPage = () => {
               <Products />
             </div>
           </div>
+          {/* فوتر */}
         </main>
       </StoreProvider>
     </div>
