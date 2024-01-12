@@ -1,10 +1,5 @@
 "use client";
-import {
-  laptopProducts,
-  mobileProducts,
-  watchProducts,
-  fullProducts,
-} from "@/ReduxToolkit/features/productFilterSlice";
+import { fullProducts } from "@/ReduxToolkit/features/productFilterSlice";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { productsData } from "@/helpers/Datas";
 import { LaptopIcon, MobileIcon, WatchIcon } from "@/helpers/Icons";
@@ -33,15 +28,15 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
   }
   function mobileData() {
     let data = productsData.filter((item) => item.type === "mobile");
-    dispatch(mobileProducts(data));
+    // dispatch(mobileProducts(data));
   }
   function laptopData() {
     let data = productsData.filter((item) => item.type === "laptop");
-    dispatch(laptopProducts(data));
+    // dispatch(laptopProducts(data));
   }
   function watchData() {
     let data = productsData.filter((item) => item.type === "watch");
-    dispatch(watchProducts(data));
+    // dispatch(watchProducts(data));
   }
 
   return (

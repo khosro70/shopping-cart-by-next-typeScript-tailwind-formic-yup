@@ -1,4 +1,20 @@
 // colors:["قرمز","نارنجی","زرد","سبز","آبی","صورتی"]
+export const colorsCheckboxItem = [
+  { id: "red", name: "red", value: "قرمز" },
+  { id: "blue", name: "blue", value: "آبی" },
+  { id: "yellow", name: "yellow", value: "زرد" },
+  { id: "green", name: "green", value: "سبز" },
+  { id: "purple", name: "purple", value: "بنفش" },
+  { id: "orange", name: "orange", value: "صورتی" },
+];
+
+export const productBrandItems = [
+  { id: "apple", name: "apple", value: "اپل" },
+  { id: "samsung", name: "samsung", value: "سامسونگ" },
+  { id: "xiaomi", name: "xiaomi", value: "شیائومی" },
+  { id: "huawei", name: "huawei", value: "هواوی" },
+];
+
 export const productsData = [
   {
     id: 1,

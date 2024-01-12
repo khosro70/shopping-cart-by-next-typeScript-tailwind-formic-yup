@@ -1,12 +1,28 @@
 "use client";
 
+import { brandFilterProducts } from "@/ReduxToolkit/features/productFilterSlice";
+import { useAppDispatch } from "@/ReduxToolkit/hooks";
+import { productBrandItems } from "@/helpers/Datas";
 import { ProductBrandIcon, ShevronIconBrand } from "@/helpers/Icons";
 import React, { useState } from "react";
 
 const ProductBrands: React.FC = () => {
+  const dispatch = useAppDispatch();
   const [productBrandShow, setProductBrandShow] = useState<boolean>(false);
   const toogleProductBrandstate = () => {
     setProductBrandShow((prevState) => !prevState);
+  };
+
+  let brands: string[] = [];
+  const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newBrand = e.target.value;
+    if (e.target.checked) {
+      brands = [...brands, newBrand];
+    } else {
+      brands = brands.filter((item) => item !== newBrand);
+    }
+
+    dispatch(brandFilterProducts(brands));
   };
 
   return (
@@ -23,54 +39,21 @@ const ProductBrands: React.FC = () => {
       </div>
       {productBrandShow ? (
         <div>
-          <div className="mb-4">
-            <input
-              className="w-4 h-4 rounded appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800"
-              type="checkbox"
-              id="apple"
-              name="apple"
-              value="apple"
-            />
-            <label className="mb-4 mr-2 cursor-pointer" htmlFor="apple">
-              اپل
-            </label>
-          </div>
-          <div className="mb-4">
-            <input
-              className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
-              type="checkbox"
-              id="samsung"
-              name="samsung"
-              value="samsung"
-            />
-            <label className="mb-4 mr-2 cursor-pointer" htmlFor="samsung">
-              سامسونگ
-            </label>
-          </div>
-          <div className="mb-4">
-            <input
-              className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
-              type="checkbox"
-              id="xiaomi"
-              name="xiaomi"
-              value="xiaomi"
-            />
-            <label className="mb-4 mr-2 cursor-pointer" htmlFor="xiaomi">
-              شیائومی
-            </label>
-          </div>
-          <div className="mb-7">
-            <input
-              className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
-              type="checkbox"
-              id="huawei"
-              name="huawei"
-              value="huawei"
-            />
-            <label className="mb-4 mr-2 cursor-pointer" htmlFor="huawei">
-              هواوی
-            </label>
-          </div>
+          {productBrandItems.map((item) => (
+            <div className="mb-4" key={item.id}>
+              <input
+                className="w-4 h-4 appearance-none text-orange-400 focus:ring-2 focus:ring-offset-1 focus:ring-orange-400 outline-none border-slate-800 rounded"
+                type="checkbox"
+                id={item.id}
+                name={item.name}
+                value={item.value}
+                onChange={handleCheckboxClick}
+              />
+              <label className="mb-4 mr-2 cursor-pointer" htmlFor={item.id}>
+                {item.value}
+              </label>
+            </div>
+          ))}
         </div>
       ) : null}
     </div>

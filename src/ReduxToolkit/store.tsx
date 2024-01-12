@@ -7,7 +7,7 @@ export const makeStore = () => {
     reducer: {
       productfilterInNavbar: productFilterReducer,
     },
-  });
+  }); 
 };
 
 export type AppStore = ReturnType<typeof makeStore>;

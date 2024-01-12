@@ -2,9 +2,9 @@
 
 import {
   fullProducts,
-  PopularityINFullProducts,
-  theMostExpensiveProducts,
-  cheapestProducts,
+  // PopularityINFullProducts,
+  // theMostExpensiveProducts,
+  // cheapestProducts,
 } from "@/ReduxToolkit/features/productFilterSlice";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { itemsInNavFilter, productsData } from "@/helpers/Datas";
@@ -35,19 +35,19 @@ const NavFilters: React.FC = () => {
     // connect to server
     let products = [...productsData];
     let data = products.sort((a, b) => b.Popularity - a.Popularity);
-    dispatch(PopularityINFullProducts(data));
+    // dispatch(PopularityINFullProducts(data));
   }
   function mostExpensiveInAllData() {
     // connect to server
     let Data = [...productsData];
     Data = Data.sort(comparePricesHighToLow);
-    dispatch(theMostExpensiveProducts(Data));
+    // dispatch(theMostExpensiveProducts(Data));
   }
   function cheapestProductsInAllData() {
     // connect to server
     let Data = [...productsData];
     Data = Data.sort(comparePricesLowToHigh);
-    dispatch(cheapestProducts(Data));
+    // dispatch(cheapestProducts(Data));
   }
 
   return (

@@ -72,3 +72,28 @@ export function calculateDiscountedPrice(
     return formattedDiscountedPrice;
   }
 }
+
+export const filterProducts = (
+  data: productInterface[],
+  filterOptions: {
+    type?: string[];
+    brand?: string[];
+    color?: string[];
+  }
+): productInterface[] => {
+  const { type, brand, color } = filterOptions;
+
+  return data.filter((product) => {
+    const matchType = !type || type.includes(product.type);
+    const matchBrand = !brand || brand.includes(product.brand);
+    const matchColor = !color || color.some((c) => product.colors.includes(c));
+
+    return matchType && matchBrand && matchColor;
+  });
+};
+
+// const filteredData = filterProducts(productsData, {
+//   type: ["mobile", "laptop"],
+//   brand: ["اپل", "سامسونگ"],
+//   color: ["قرمز", "زرد", "سبز"],
+// });
