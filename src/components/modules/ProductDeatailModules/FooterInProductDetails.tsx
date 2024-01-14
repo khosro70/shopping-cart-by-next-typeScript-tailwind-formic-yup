@@ -19,7 +19,7 @@ import React from "react";
 
 const FooterInProductDetails: React.FC = () => {
   return (
-    <footer className="mt-8 flex flex-wrap">
+    <footer className="mt-12 flex flex-wrap">
       <span className="py-6 px-12 border bg-gray-300 flex-1 cursor-pointer">
         <Digiclub />
       </span>

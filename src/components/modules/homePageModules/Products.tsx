@@ -12,7 +12,7 @@ const Products: React.FC = () => {
   );
   // console.log(productFilter)
   return (
-    <div className="h-52 rounded grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div className=" rounded grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {productFilter.map((item) => (
         <Product key={item.id} data={item} />
       ))}

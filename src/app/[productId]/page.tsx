@@ -52,7 +52,6 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
             {type === "mobile" ? "موبایل" : null}
           </span>
         </div>
-        {/* productDetails */}
         <ProductDetails
           name={name}
           price={price}
@@ -63,7 +62,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
         />
         {/* similarProducts */}
         <div className="mt-5">
-          <span className="mb-3 block w-fit text-lg font-medium border-b-2 pb-2 border-orange-500">
+          <span className="mb-8 block w-fit text-lg font-medium border-b-2 pb-2 border-orange-500">
             کالاهای مشابه
           </span>
           <SimilarProductPagination type={type} />
