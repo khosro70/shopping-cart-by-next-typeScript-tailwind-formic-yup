@@ -50,7 +50,7 @@ const PriceAndAddtoBasket: React.FC<PriceAndAddtoBasketInterpaceProps> = ({
             <span></span>
           </div>
         </div>
-        <button className="mt-3 xl:mt-12 rounded bg-orange-800 p-2 text-slate-50 flex justify-center items-center w-full">
+        <button className="mt-3 xl:mt-12 rounded bg-orange-700 hover:bg-orange-600 p-2 text-slate-50 flex justify-center items-center w-full">
           افزودن به سبد خرید
         </button>
       </div>

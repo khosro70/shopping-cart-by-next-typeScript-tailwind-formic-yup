@@ -73,27 +73,46 @@ export function calculateDiscountedPrice(
   }
 }
 
-export const filterProducts = (
+export function filterProducts(
   data: productInterface[],
   filterOptions: {
-    type?: string[];
+    type?: string;
     brand?: string[];
     color?: string[];
-  }
-): productInterface[] => {
+  },
+  navFilterType: string
+): productInterface[] {
   const { type, brand, color } = filterOptions;
 
-  return data.filter((product) => {
-    const matchType = !type || type.includes(product.type);
-    const matchBrand = !brand || brand.includes(product.brand);
-    const matchColor = !color || color.some((c) => product.colors.includes(c));
+  const products = data.filter((product) => {
+    console.log(product.type);
+    const matchType =
+      !type || type.includes(product.type) || type === "allProduct";
+    const matchBrand =
+      !brand || brand.length === 0 || brand.includes(product.brand);
+    const matchColor =
+      !color ||
+      color.length === 0 ||
+      color.some((c) => product.colors.includes(c));
 
     return matchType && matchBrand && matchColor;
   });
-};
-
-// const filteredData = filterProducts(productsData, {
-//   type: ["mobile", "laptop"],
-//   brand: ["اپل", "سامسونگ"],
-//   color: ["قرمز", "زرد", "سبز"],
-// });
+  switch (navFilterType) {
+    case "محبوب ترین ها":
+      return products.sort((a, b) => b.Popularity - a.Popularity);
+    case "گران ترین ها":
+      return products.sort(
+        (a, b) =>
+          parseFloat(b.price.replace(/,/g, "")) -
+          parseFloat(a.price.replace(/,/g, ""))
+      );
+    case "ارزان ترین ها":
+      return products.sort(
+        (a, b) =>
+          parseFloat(a.price.replace(/,/g, "")) -
+          parseFloat(b.price.replace(/,/g, ""))
+      );
+    default:
+      return products;
+  }
+}

@@ -8,7 +8,7 @@ import { makeStore } from "@/ReduxToolkit/store";
 import { NextPage } from "next";
 
 import StoreProvider from "./StoreProvider";
-import HomePageFooter from "@/components/modules/homePageModules/HomePageFooter";
+import Footer from "@/components/modules/shared/Footer";
 
 const Home: NextPage = () => {
   const store = makeStore();
@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         </main>
       </StoreProvider>
       <footer>
-        <HomePageFooter />
+        <Footer />
       </footer>
     </div>
   );
