@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const DesktopNavbar: React.FC = () => {
   return (
-    <>
+    <div className="sticky top-28 hidden lg:block bg-gray-50 rounded py-5 px-4 overflow-auto desktopFilter h-fit lg:w-52">
       <h3 className="font-bold text-orange-400 mb-5">دسته بندی</h3>
       <CategoryInNavbar />
       <h3 className="font-bold mb-5 text-orange-400">فیلتر</h3>
@@ -26,7 +26,7 @@ const DesktopNavbar: React.FC = () => {
           height={500}
         />
       </Link>
-    </>
+    </div>
   );
 };
 
