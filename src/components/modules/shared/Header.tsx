@@ -6,9 +6,12 @@ import { BurgerIcon, LoginIcon, ShoppingCartIcon } from "@/helpers/Icons";
 import Link from "next/link";
 import { useState } from "react";
 import SearchAndMenuItems from "../homePageModules/SearchAndMenuItems";
+import { useAppSelector } from "@/ReduxToolkit/hooks";
+import { englishNumbersToPersian } from "@/helpers/functions";
 
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
+  const shopCartState = useAppSelector((state) => state.shoppingCartStates);
   const handleOutsideClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
   ): void => {
@@ -32,13 +35,18 @@ export default function Header() {
           </button>
           <SearchAndMenuItems />
           <div className="flex justify-start lg:mr-3">
-            <div className="p-2 border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
+            <div className="relative p-2 border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">
               <Link
                 className="flex justify-center items-center text-sm"
-                href="#"
+                href="/shoppingCart"
               >
                 <ShoppingCartIcon />
                 <span className="mr-2 lg:text-sm">سبد خرید</span>
+                {shopCartState.productCount > 0 ? (
+                  <span className="absolute -top-2 rounded-full bg-green-600 flex justify-center items-center p-1 w-6 h-6 -right-2 text-slate-50">
+                    {englishNumbersToPersian(shopCartState.productCount.toString())}
+                  </span>
+                ) : null}
               </Link>
             </div>
             <div className="p-2 mr-[2px] border rounded transition-all font-semibold hover:bg-blue-400 hover:text-white">

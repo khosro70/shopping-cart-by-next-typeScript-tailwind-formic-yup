@@ -1,3 +1,4 @@
+import { ProductDetailsInterfaceProps } from "@/helpers/conteracts";
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaCheck, FaThumbsUp } from "react-icons/fa";
@@ -7,12 +8,11 @@ interface NameAdnDeateilsInterpaceProps {
   name: string | undefined;
   colors: string[] | undefined;
 }
-const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({
-  name,
-  colors,
+const NameAdnDeateils: React.FC<ProductDetailsInterfaceProps> = ({
+  productData
 }) => {
   let indextActive;
-  colors ? (indextActive = colors.length - 1) : null;
+  productData?.colors ? (indextActive = productData.colors.length - 1) : null;
 
   const [selectedSpan, setSelectedSpan] = useState<number | null>(
     indextActive || 1
@@ -26,7 +26,7 @@ const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({
       {/* name and datails */}
       <div className="bg-gray-50 w-full lg:w-7/12 p-2 rounded mb-4 lg:mb-0">
         <p className="border-b pb-2 text-center font-bold text-lg md:text-sm lg:text-lg">
-          {name}
+          {productData?.name}
         </p>
         <div className="text-xs flex mb-2 mt-3 lg:mb-5 lg:mt-5">
           <span className="ml-2 flex align-baseline">
@@ -50,8 +50,8 @@ const NameAdnDeateils: React.FC<NameAdnDeateilsInterpaceProps> = ({
         <div>
           <p>رنگ ها:</p>
           <div className="flex mt-1 lg:mt-2">
-            {colors
-              ? colors.map((item, index) => (
+            {productData?.colors
+              ? productData?.colors.map((item, index) => (
                   <span
                     key={index}
                     onClick={() => handleSpanClick(index)}

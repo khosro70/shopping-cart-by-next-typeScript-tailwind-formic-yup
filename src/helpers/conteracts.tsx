@@ -17,16 +17,28 @@ export interface ProductInterfaceProps {
     type: string;
     discountPercentage: string;
     colors: string[];
+    count?: number;
   };
 }
 
+export interface ProductInterfacePropsInShoppingCard {
+  key: number;
+  data: {
+    id: number;
+    name: string;
+    price: string;
+    image: string;
+    brand: string;
+    type: string;
+    discountPercentage: string;
+    colors: string[];
+    count?: number;
+  };
+  isBorder:boolean
+}
+
 export interface ProductDetailsInterfaceProps {
-  name: string | undefined;
-  price: string | undefined;
-  image: string | undefined;
-  brand: string | undefined;
-  type: string | undefined;
-  colors: string[] | undefined;
+  productData: productInterface | undefined;
 }
 
 export interface productInterface {
@@ -40,6 +52,28 @@ export interface productInterface {
   Popularity: number;
   colors: string[];
   discountPercentage: string;
+}
+
+export interface productIterfaceInShopCart {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  brand: string;
+  type: string;
+  saleNumber: number;
+  Popularity: number;
+  colors: string[];
+  discountPercentage: string;
+  count: number;
+}
+
+export interface initialStateInterfaceInShopCart {
+  product: productIterfaceInShopCart | undefined;
+  products: productIterfaceInShopCart[];
+  allProductsNumber: number;
+  totalProductPrice: number;
+  productCount: number;
 }
 
 export interface CategoryItemInNavbarPropsInterface {

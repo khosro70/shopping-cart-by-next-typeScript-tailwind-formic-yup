@@ -1,4 +1,4 @@
-import { productInterface } from "./conteracts";
+import { productInterface, productIterfaceInShopCart } from "./conteracts";
 
 export function englishNumbersToPersian(input: string): string {
   const persianNumbers: { [key: string]: string } = {
@@ -59,8 +59,8 @@ export function calculateDiscountedPrice(
   }
   const parsedInitialDiscountPercentage = parseFloat(discountPercentage);
 
-  if (discountPercentage === undefined) {
-    return initialPrice;
+  if (!discountPercentage && initialPrice) {
+    return englishNumbersToPersian(initialPrice.toLocaleString());
   }
   if (parsedInitialPrice !== undefined) {
     const discountAmount: number =
@@ -115,4 +115,83 @@ export function filterProducts(
     default:
       return products;
   }
+}
+
+export const findProductInSelectedProduct = (
+  products: productIterfaceInShopCart[],
+  id: number | undefined
+): productIterfaceInShopCart | undefined => {
+  const product = products.find((product) => product.id === id);
+  return product;
+};
+
+export const calculateTotalPriceAndCounts = (
+  products: productIterfaceInShopCart[]
+): {
+  allProductsNumber: number;
+  totalProductPrice: number;
+  productCount: number;
+} => {
+  const totalCount = products.reduce((acc, product) => acc + product.count, 0);
+  const productCount = products.length;
+  const totalProductPrice = products.reduce((acc, product) => {
+    const productPrice = product.discountPercentage
+      ? applyDiscountToPriceInShoppingCartSlice(
+          product.price,
+          product.discountPercentage
+        )
+      : parseFloat(product.price.replace(/,/g, ""));
+    if (typeof productPrice === "number") {
+      return acc + product.count * productPrice;
+    } else {
+      return acc;
+    }
+  }, 0);
+
+  return {
+    allProductsNumber: totalCount,
+    totalProductPrice: totalProductPrice,
+    productCount: productCount,
+  };
+};
+
+export function applyDiscountToPriceInShoppingCartSlice(
+  price: string,
+  discountPercentage: string
+) {
+  const priceNumber = parseFloat(price.replace(/,/g, ""));
+
+  const discountAmount = (Number(discountPercentage) / 100) * priceNumber;
+
+  const discountedValue = priceNumber - discountAmount;
+
+  const result = discountedValue.toLocaleString(undefined, {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+
+  return parseFloat(result.replace(/,/g, ""));
+}
+
+export function calculateTotalPriceOfOneProduct(
+  price: string,
+  discountPercentage: string,
+  count: number
+) {
+  const Price = parseFloat(price.replace(/,/g, ""));
+  const discount = parseFloat(discountPercentage);
+
+  let discountedPrice: number;
+  let result: number;
+  if (discount) {
+    discountedPrice = Price - (Price * discount) / 100;
+    result = count * discountedPrice;
+  } else {
+    discountedPrice = Price;
+    result = count * discountedPrice;
+  }
+
+  const resultString = englishNumbersToPersian(result.toLocaleString());
+
+  return resultString;
 }

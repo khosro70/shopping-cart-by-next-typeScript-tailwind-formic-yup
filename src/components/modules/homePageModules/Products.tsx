@@ -10,12 +10,19 @@ const Products: React.FC = () => {
   const productFilter: productInterface[] = useAppSelector(
     (state) => state.productfilterInNavbar.productsFilter
   );
-  // console.log(productFilter)
   return (
-    <div className=" rounded grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {productFilter.map((item) => (
-        <Product key={item.id} data={item} />
-      ))}
+    <div
+      className={`rounded grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 min-h-[calc(100vh-200px)] ${
+        productFilter.length === 0 ? "flex justify-center items-center" : "grid"
+      }`}
+    >
+      {productFilter.length > 0 ? (
+        productFilter.map((item) => <Product key={item.id} data={item} />)
+      ) : (
+        <div>
+          <span>محصولی متناسب با فیلترهای شما وجود ندارد</span>
+        </div>
+      )}
     </div>
   );
 };

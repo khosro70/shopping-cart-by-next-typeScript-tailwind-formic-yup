@@ -17,6 +17,7 @@ const SimilarProductPagination: React.FC<
   const filterDataForSimilarProduct = (type: any) => {
     return productsData.filter((product) => product.type === type);
   };
+
   return (
     <>
       <Swiper

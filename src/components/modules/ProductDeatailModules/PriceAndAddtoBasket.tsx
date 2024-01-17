@@ -1,18 +1,41 @@
 import {
+  addProduct,
+  decreaseProductCount,
+  deleteProduct,
+  increaseProductCount,
+} from "@/ReduxToolkit/features/shoppingCartSlice";
+import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
+import { ProductDetailsInterfaceProps } from "@/helpers/conteracts";
+import {
   calculateDiscountedPrice,
   englishNumbersToPersian,
+  findProductInSelectedProduct,
 } from "@/helpers/functions";
 import React from "react";
-import { FaExclamationCircle } from "react-icons/fa";
-
+import { FaExclamationCircle, FaRegTrashAlt } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
+import { FiMinus } from "react-icons/fi";
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { TbTruckDelivery } from "react-icons/tb";
-interface PriceAndAddtoBasketInterpaceProps {
-  price: string | undefined;
-}
-const PriceAndAddtoBasket: React.FC<PriceAndAddtoBasketInterpaceProps> = ({
-  price,
+
+const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
+  productData,
 }) => {
+  const dispatch = useAppDispatch();
+
+  const selectedProducts = useAppSelector(
+    (state) => state.shoppingCartStates.products
+  );
+
+  const selectedProduct = findProductInSelectedProduct(
+    selectedProducts,
+    productData?.id
+  );
+
+  const clickHandler: any = () => {
+    dispatch(addProduct(productData));
+  };
+
   return (
     <>
       <div className="bg-gray-50 w-full lg:w-5/12 p-2 rounded text-sm">
@@ -37,22 +60,73 @@ const PriceAndAddtoBasket: React.FC<PriceAndAddtoBasketInterpaceProps> = ({
           </span>
         </div>
         <div className="flex flex-col justify-center items-end ml-5 mt-3">
-          <div className="flex mb-1">
-            <span className="opacity-60 line-through">
-              {price ? englishNumbersToPersian(price) : ""}
-            </span>
-            <span className="mr-2 w-4 h-4 p-3 rounded-2xl bg-red-800 text-slate-50 flex justify-center items-center">
-              ۶%
-            </span>
-          </div>
+          {productData?.discountPercentage ? (
+            <div className="flex mb-1">
+              <span className="opacity-60 line-through">
+                {productData?.price
+                  ? englishNumbersToPersian(productData?.price)
+                  : ""}
+              </span>
+              <span className="mr-2 w-5 h-5 p-3 rounded-2xl bg-red-800 text-slate-50 flex justify-center items-center">
+                {englishNumbersToPersian(productData?.discountPercentage)}%
+              </span>
+            </div>
+          ) : null}
           <div>
-            <span>{calculateDiscountedPrice(price, "6")} تومان</span>
+            <span>
+              {productData
+                ? calculateDiscountedPrice(
+                    productData.price,
+                    productData.discountPercentage
+                  )
+                : ""}
+              <span> تومان</span>
+            </span>
             <span></span>
           </div>
         </div>
-        <button className="mt-3 xl:mt-12 rounded bg-orange-700 hover:bg-orange-600 p-2 text-slate-50 flex justify-center items-center w-full">
-          افزودن به سبد خرید
-        </button>
+        {selectedProduct ? (
+          <div className="mt-3 xl:mt-12 flex justify-start items-center gap-x-2">
+            <div className="flex gap-x-2">
+              <button
+                className="p-[10px] rounded bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
+                onClick={() => dispatch(increaseProductCount(selectedProduct))}
+              >
+                <FaPlus />
+              </button>
+              {selectedProduct?.count > 1 ? (
+                <button
+                  className="p-[10px] rounded bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
+                  onClick={() =>
+                    dispatch(decreaseProductCount(selectedProduct))
+                  }
+                >
+                  <FiMinus />
+                </button>
+              ) : (
+                <button
+                  className="p-[10px] rounded bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
+                  onClick={() => dispatch(deleteProduct(selectedProduct))}
+                >
+                  <FaRegTrashAlt />
+                </button>
+              )}
+            </div>
+            <span className="mr-3">
+              <span className="text-lg">
+                {englishNumbersToPersian(selectedProduct?.count.toString())}
+              </span>
+              <span className="mr-2">عدد در سبد شما</span>
+            </span>
+          </div>
+        ) : (
+          <button
+            onClick={clickHandler}
+            className="mt-3 xl:mt-12 rounded bg-orange-700 hover:bg-orange-600 p-2 text-slate-50 flex justify-center items-center w-full"
+          >
+            افزودن به سبد خرید
+          </button>
+        )}
       </div>
     </>
   );

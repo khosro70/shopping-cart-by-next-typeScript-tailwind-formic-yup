@@ -1,30 +1,83 @@
-import { productsData } from "@/helpers/Datas";
-import { productInterface } from "@/helpers/conteracts";
+import {
+  initialStateInterfaceInShopCart,
+  productIterfaceInShopCart,
+} from "@/helpers/conteracts";
+import { calculateTotalPriceAndCounts } from "@/helpers/functions";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState: initialStateInterfaceInShopCart = {
+  product: undefined,
   products: [],
-  allProductsNumber: Number,
-  totalProductPrice: [],
+  allProductsNumber: 0,
+  totalProductPrice: 0,
+  productCount: 0,
 };
 
 export const shoppingCartSlice = createSlice({
-  name: "productsFilter",
+  name: "shopCartProducts",
   initialState,
   reducers: {
-    setProducts: (state, action) => {
-      //   state.productType = action.payload;
+    addProduct: (state, action) => {
+      const productItem: productIterfaceInShopCart | undefined =
+        state.products.find((product) => product.id === action.payload.id);
+      if (!productItem) {
+        const newProduct = { ...action.payload, count: 1 };
+        const newProducts = [...state.products, newProduct];
+        const { allProductsNumber, totalProductPrice, productCount } =
+          calculateTotalPriceAndCounts(newProducts);
+        state.products = newProducts;
+        state.allProductsNumber = allProductsNumber;
+        state.totalProductPrice = totalProductPrice;
+        state.productCount = productCount;
+      }
     },
-    setAllProductsNumber: (state, action) => {
-      //   state.productBrands = action.payload;
+    increaseProductCount: (state, action) => {
+      const productIndex = state.products.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      state.products[productIndex].count++;
+      const { allProductsNumber, totalProductPrice } =
+        calculateTotalPriceAndCounts(state.products);
+      state.allProductsNumber = allProductsNumber;
+      state.totalProductPrice = totalProductPrice;
     },
-    setTotalProductPrice: (state, action) => {
-      //   state.productColors = action.payload;
+    decreaseProductCount: (state, action) => {
+      const productIndex = state.products.findIndex(
+        (product) => product.id === action.payload.id
+      );
+      state.products[productIndex].count--;
+      const { allProductsNumber, totalProductPrice } =
+        calculateTotalPriceAndCounts(state.products);
+      state.allProductsNumber = allProductsNumber;
+      state.totalProductPrice = totalProductPrice;
+    },
+    deleteProduct: (state, action) => {
+      const productItem: productIterfaceInShopCart | undefined =
+        state.products.find((product) => product.id === action.payload.id);
+      if (productItem) {
+        const filterProducts = state.products.filter(
+          (product) => product.id !== action.payload.id
+        );
+        const { allProductsNumber, totalProductPrice, productCount } =
+          calculateTotalPriceAndCounts(filterProducts);
+        state.products = filterProducts;
+        state.allProductsNumber = allProductsNumber;
+        state.totalProductPrice = totalProductPrice;
+        state.productCount = productCount;
+        console.log(
+          filterProducts,
+          calculateTotalPriceAndCounts(filterProducts)
+        );
+      }
     },
   },
 });
 
-export const { setProducts, setAllProductsNumber, setTotalProductPrice } =
-  shoppingCartSlice.actions;
+export const {
+  addProduct,
+  increaseProductCount,
+  decreaseProductCount,
+  deleteProduct,
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
