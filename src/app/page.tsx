@@ -6,6 +6,7 @@ import Products from "@/components/modules/homePageModules/Products";
 import { NextPage } from "next";
 
 import Footer from "@/components/modules/shared/Footer";
+import { ToastContainer } from "react-toastify";
 
 const Home: NextPage = () => {
   return (
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
       <footer>
         <Footer />
       </footer>
+      <ToastContainer />
     </div>
   );
 };

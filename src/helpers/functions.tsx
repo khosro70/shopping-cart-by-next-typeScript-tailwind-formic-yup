@@ -1,3 +1,4 @@
+import { Bounce, toast } from "react-toastify";
 import { productInterface, productIterfaceInShopCart } from "./conteracts";
 
 export function englishNumbersToPersian(input: string): string {
@@ -72,6 +73,18 @@ export function calculateDiscountedPrice(
     return formattedDiscountedPrice;
   }
 }
+
+ export const notifySuccessLogin = () =>toast.success("با موفقیت وارد شدید !", {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "colored",
+  transition: Bounce,
+  });
 
 export function filterProducts(
   data: productInterface[],
