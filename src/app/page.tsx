@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           </div>
           <div className="w-full">
             <NavFilters />
-            <Products />
+            <Products itemsPerPage={12} />
           </div>
         </div>
       </main>
