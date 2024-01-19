@@ -60,7 +60,7 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
       <hr />
       <Link
         href={`/${id}`}
-        className="flex bottom-1 justify-center p-3 rounded w-full font-bold text-orange-800 text-lg hover:bg-gray-300"
+        className="flex bottom-1 justify-center transition p-3 rounded w-full font-bold text-orange-800 text-lg hover:bg-gray-300"
       >
         مشاهده و سفارش
       </Link>

@@ -122,7 +122,7 @@ const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
         ) : (
           <button
             onClick={clickHandler}
-            className="mt-3 xl:mt-12 rounded bg-orange-700 hover:bg-orange-600 p-2 text-slate-50 flex justify-center items-center w-full"
+            className="mt-3 xl:mt-12 rounded transition bg-orange-700 hover:bg-orange-600 p-2 text-slate-50 flex justify-center items-center w-full"
           >
             افزودن به سبد خرید
           </button>

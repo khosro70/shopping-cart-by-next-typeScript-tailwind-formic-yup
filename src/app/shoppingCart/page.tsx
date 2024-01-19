@@ -10,10 +10,15 @@ import ProductItemInShoppingCart from "@/components/modules/shoppingCartModules/
 import { englishNumbersToPersian } from "@/helpers/functions";
 import { Empty_Cart } from "@/helpers/Icons";
 import Link from "next/link";
+import { useState } from "react";
 
 const shoppingCartPage: NextPage = () => {
+  const [displayCount, setDisplayCount] = useState(2);
   const states = useAppSelector((state) => state.shoppingCartStates);
-  console.log(states.product);
+  const handleShowAll = () => {
+    setDisplayCount(states.products.length);
+  };
+
   return (
     <div>
       <Header />
@@ -32,15 +37,25 @@ const shoppingCartPage: NextPage = () => {
                   کالا
                 </p>
               </div>
-              {/* پروداکتس */}
+              {/* products */}
               <div className="flex flex-col gap-x-4">
-                {states.products.map((product, index) => (
-                  <ProductItemInShoppingCart
-                    key={product.id}
-                    data={product}
-                    isBorder={index == states.products.length - 1}
-                  />
-                ))}
+                {states.products
+                  .slice(0, displayCount)
+                  .map((product, index) => (
+                    <ProductItemInShoppingCart
+                      key={product.id}
+                      data={product}
+                      isBorder={
+                        index ==
+                        states.products.slice(0, displayCount).length - 1
+                      }
+                    />
+                  ))}
+                {displayCount < states.products.length && (
+                  <button className="rounded p-2 bg-slate-200 font-medium hover:bg-slate-300 transition" onClick={handleShowAll}>
+                    نمایش همه محصولات سبد خرید
+                  </button>
+                )}
               </div>
             </div>
             <div className="mt-2 lg:mt-0 mx-auto flex flex-col w-full lg:w-96 bg-gray-50 h-44 p-6 justify-between">
@@ -55,7 +70,7 @@ const shoppingCartPage: NextPage = () => {
                   <span> تومان </span>
                 </span>
               </div>
-              <button className="font-bold rounded p-2 bg-orange-600 text-slate-50">
+              <button className="font-bold rounded p-2 bg-orange-600 hover:bg-orange-700 transition text-slate-50">
                 تایید و تکمیل سفارش
               </button>
             </div>

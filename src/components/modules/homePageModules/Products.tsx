@@ -59,9 +59,8 @@ const Products: React.FC<productsInterfaceProps> = ({ itemsPerPage }) => {
         breakClassName="bg-gray-300 py-1 px-3 rounded"
         pageClassName="bg-gray-300 py-1 px-3 rounded"
         activeClassName="bg-gray-400"
-        pageLabelBuilder={(page) =>
-          englishNumbersToPersian((page).toString())
-        }
+        pageLabelBuilder={(page) => englishNumbersToPersian(page.toString())}
+        disabledClassName="opacity-60"
       />
     </>
   );
