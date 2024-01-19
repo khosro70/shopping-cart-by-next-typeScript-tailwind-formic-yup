@@ -5,6 +5,7 @@ import Product from "../shared/Product";
 import { useAppSelector } from "@/ReduxToolkit/hooks";
 import { productInterface } from "@/helpers/conteracts";
 import ReactPaginate from "react-paginate";
+import { englishNumbersToPersian } from "@/helpers/functions";
 interface productsInterfaceProps {
   itemsPerPage: number;
 }
@@ -47,16 +48,20 @@ const Products: React.FC<productsInterfaceProps> = ({ itemsPerPage }) => {
       <ReactPaginate
         className="flex justify-center mt-5 gap-x-1"
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel="بعدی >"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel="< قبلی"
         renderOnZeroPageCount={null}
         previousClassName="bg-gray-300 py-1 px-3 rounded"
         nextClassName="bg-gray-300 py-1 px-3 rounded"
         breakClassName="bg-gray-300 py-1 px-3 rounded"
         pageClassName="bg-gray-300 py-1 px-3 rounded"
+        activeClassName="bg-gray-400"
+        pageLabelBuilder={(page) =>
+          englishNumbersToPersian((page).toString())
+        }
       />
     </>
   );
