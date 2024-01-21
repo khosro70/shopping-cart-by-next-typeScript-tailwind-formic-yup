@@ -38,52 +38,56 @@ const ContactUsForm: React.FC = () => {
       validationSchema={contactUsSchema}
       onSubmit={handleSubmit}
     >
-      <Form className="flex flex-col gap-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-6">
-          <InputWithOptions />
-          <TextInputComponent
-            name="fullName"
-            text="نام و نام خانوادگی"
-            required={true}
-          />
-          <TextInputComponent name="email" text="ایمیل" required={true} />
-          <TextInputComponent
-            name="phoneNumber"
-            text="شماره تلفن"
-            required={true}
-          />
-          <TextInputComponent
-            name="orderNumber"
-            text="شماره سفارش"
-            required={false}
-          />
-        </div>
-        <div className="flex flex-col">
-          <label className="mb-2 flex" htmlFor="message">
-            <span>متن پیام</span>
-            <MdOutlineStar size={10} className="text-red-600" />
-          </label>
-          <div className=" border-2 border-slate-200 bg-white">
-            <Field
-              name="message"
-              as="textarea"
-              rows={4}
-              className="w-full max-h-28 resize-none border-none bg-white focus:ring-0 focus:border-0"
+      {({ values, setFieldValue }) => (
+        <Form className="flex flex-col gap-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-6">
+            <InputWithOptions
+              setSearchTerm={(value) => setFieldValue("subject", value)}
+            />
+            <TextInputComponent
+              name="fullName"
+              text="نام و نام خانوادگی"
+              required={true}
+            />
+            <TextInputComponent name="email" text="ایمیل" required={true} />
+            <TextInputComponent
+              name="phoneNumber"
+              text="شماره تلفن"
+              required={true}
+            />
+            <TextInputComponent
+              name="orderNumber"
+              text="شماره سفارش"
+              required={false}
             />
           </div>
-          <ErrorMessage
-            name="message"
-            component="div"
-            className="text-red-500"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white py-2 rounded-md"
-        >
-          ارسال
-        </button>
-      </Form>
+          <div className="flex flex-col">
+            <label className="mb-2 flex" htmlFor="message">
+              <span>متن پیام</span>
+              <MdOutlineStar size={10} className="text-red-600" />
+            </label>
+            <div className=" border-2 border-slate-200 bg-white">
+              <Field
+                name="message"
+                as="textarea"
+                rows={4}
+                className="w-full max-h-28 resize-none border-none bg-white focus:ring-0 focus:border-0"
+              />
+            </div>
+            <ErrorMessage
+              name="message"
+              component="div"
+              className="text-red-500"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white py-2 rounded-md"
+          >
+            ارسال
+          </button>
+        </Form>
+      )}
     </Formik>
   );
 };

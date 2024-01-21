@@ -4,14 +4,17 @@ import { MdKeyboardArrowDown, MdOutlineStar } from "react-icons/md";
 import OptionListForSubjectInput from "./OptionListForSubjectInput";
 import { ErrorMessage, Field } from "formik";
 
-const InputWithOptions: React.FC = () => {
+const InputWithOptions: React.FC<{
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ setSearchTerm }) => {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerms] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const handleOptionSelect = (value: string) => {
     setIsOptionsVisible(false);
-    setSearchTerm(value);
+    setSearchTerms(value);
+    setSearchTerm(value)
   };
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -22,7 +25,7 @@ const InputWithOptions: React.FC = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    setSearchTerms(e.target.value);
     setIsOptionsVisible(true);
   };
 
