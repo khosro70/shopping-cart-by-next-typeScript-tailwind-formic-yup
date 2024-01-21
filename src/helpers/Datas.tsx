@@ -557,7 +557,7 @@ export const menuItems = [
   },
   {
     id: "6",
-    href: "#",
+    href: "/contactus",
     text: "تماس با ما",
   },
 ];

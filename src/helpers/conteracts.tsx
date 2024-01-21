@@ -20,6 +20,14 @@ export interface ProductInterfaceProps {
     count?: number;
   };
 }
+export interface ContactUsFormValuesInterface {
+  subject: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+  orderNumber: string;
+  message: string;
+}
 
 export interface ProductInterfacePropsInShoppingCard {
   key: number;
@@ -34,7 +42,7 @@ export interface ProductInterfacePropsInShoppingCard {
     colors: string[];
     count?: number;
   };
-  isBorder:boolean
+  isBorder: boolean;
 }
 
 export interface ProductDetailsInterfaceProps {

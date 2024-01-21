@@ -6,6 +6,7 @@ import { useAppSelector } from "@/ReduxToolkit/hooks";
 import { productInterface } from "@/helpers/conteracts";
 import ReactPaginate from "react-paginate";
 import { englishNumbersToPersian } from "@/helpers/functions";
+import { Empty_Cart } from "@/helpers/Icons";
 interface productsInterfaceProps {
   itemsPerPage: number;
 }
@@ -40,8 +41,9 @@ const Products: React.FC<productsInterfaceProps> = ({ itemsPerPage }) => {
         {currentItems.length > 0 ? (
           currentItems.map((item) => <Product key={item.id} data={item} />)
         ) : (
-          <div>
-            <span>محصولی متناسب با فیلترهای شما وجود ندارد</span>
+          <div className="flex flex-col justify-center items-center gap-y-4">
+            <Empty_Cart />
+            <span>محصولی متناسب با فیلترهای شما وجود ندارد !</span>
           </div>
         )}
       </div>
