@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed left-0 right-0 top-0 shadow-lg bg-stone-50 mb-6 z-10">
+      <div className="fixed left-0 right-0 top-0 shadow-lg bg-stone-50 mb-6 z-20">
         <div className="relative flex container mx-auto 2xl:max-w-screen-2xl w-full py-6 px-4 justify-between items-center">
           <button
             className="lg:hidden"

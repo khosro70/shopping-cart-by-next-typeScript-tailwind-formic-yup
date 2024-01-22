@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import InputWithOptions from "@/components/modules/contactUsModules/InputWithOptions";
 import { ContactUsFormValuesInterface } from "@/helpers/conteracts";
 import { MdOutlineStar } from "react-icons/md";
 import TextInputComponent from "@/components/modules/shared/form/TextInputComponent";
+import { notifySuccessSendMessage } from "@/helpers/functions";
 
 const contactUsSchema: Yup.Schema<ContactUsFormValuesInterface> = Yup.object({
   subject: Yup.string().required("لطفاً موضوع را انتخاب کنید"),
@@ -13,7 +14,10 @@ const contactUsSchema: Yup.Schema<ContactUsFormValuesInterface> = Yup.object({
   email: Yup.string()
     .email("آدرس ایمیل معتبر نیست")
     .required("لطفاً آدرس ایمیل خود را وارد کنید"),
-  phoneNumber: Yup.string().required("لطفاً شماره تلفن خود را وارد کنید"),
+  phoneNumber: Yup.string()
+    .matches(/^\d+$/, "فقط عدد مجاز است")
+    .required("لطفاً شماره تلفن خود را وارد کنید")
+    .matches(/^09\d{9}$/, "شماره تلفن معتبر نیست"),
   orderNumber: Yup.string(),
   message: Yup.string().required("لطفاً متن پیام خود را وارد کنید"),
 }).defined() as any;
@@ -24,12 +28,17 @@ const ContactUsForm: React.FC = () => {
     fullName: "",
     email: "",
     phoneNumber: "",
-    orderNumber: "",
+    orderNumber: "", 
     message: "",
   };
 
-  const handleSubmit = (values: ContactUsFormValuesInterface) => {
+  const handleSubmit = (
+    values: ContactUsFormValuesInterface,
+    { resetForm }: FormikHelpers<ContactUsFormValuesInterface>
+  ) => {
     console.log(values);
+    notifySuccessSendMessage();
+    resetForm();
   };
 
   return (
@@ -80,12 +89,14 @@ const ContactUsForm: React.FC = () => {
               className="text-red-500"
             />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white py-2 rounded-md"
-          >
-            ارسال
-          </button>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white py-2 px-4 rounded-md w-fit"
+            >
+              ارسال
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

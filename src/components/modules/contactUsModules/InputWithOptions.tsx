@@ -14,14 +14,7 @@ const InputWithOptions: React.FC<{
   const handleOptionSelect = (value: string) => {
     setIsOptionsVisible(false);
     setSearchTerms(value);
-    setSearchTerm(value)
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as HTMLElement;
-    if (inputRef.current && !inputRef.current.contains(target)) {
-      setIsOptionsVisible(false);
-    }
+    setSearchTerm(value);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,6 +28,17 @@ const InputWithOptions: React.FC<{
     e.preventDefault();
     setIsOptionsVisible(!isOptionsVisible);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    const target = event.target as HTMLElement;
+    if (
+      !inputRef.current?.contains(target) &&
+      !target.classList.contains("OptionListItem")
+    ) {
+      setIsOptionsVisible(false);
+    }
+  };
+
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -62,6 +66,7 @@ const InputWithOptions: React.FC<{
         <div className="flex items-center justify-between border-2 border-slate-200 bg-white pl-2">
           <Field
             name="subject"
+            autoComplete="off"
             type="text"
             className="border-none bg-white focus:ring-0 focus:border-0"
             onFocus={() => setIsOptionsVisible(true)}

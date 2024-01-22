@@ -14,12 +14,12 @@ const OptionListForSubjectInput: React.FC<{
   };
 
   return (
-    <div className="flex flex-col absolute z-10 w-full max-h-32 overflow-auto top-12 gap-y-2 border-2 border-slate-200 bg-white p-2">
+    <div className="flex flex-col absolute z-10 w-full max-h-32 overflow-auto top-12 gap-y-2 border-2 border-slate-200 bg-white p-2 OptionListItem">
       {filteredOptions.length === 0 ? (
         <div>موردی یافت نشد</div>
       ) : (
         filteredOptions.map((option, index) => (
-          <div key={index} onMouseDown={() => handleOptionClick(option)}>
+          <div className="cursor-pointer" key={index} onMouseDown={() => handleOptionClick(option)}>
             {option}
           </div>
         ))
@@ -28,4 +28,4 @@ const OptionListForSubjectInput: React.FC<{
   );
 };
 
-export default OptionListForSubjectInput
+export default OptionListForSubjectInput;

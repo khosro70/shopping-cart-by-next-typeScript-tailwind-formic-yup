@@ -3,6 +3,8 @@ import { NextPage } from "next";
 
 import Footer from "@/components/modules/shared/Footer";
 import ContactUsForm from "@/components/templates/contactus/ContactUsForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const contactUsPage: NextPage = () => {
   return (
@@ -24,7 +26,7 @@ const contactUsPage: NextPage = () => {
           </div>
           <ContactUsForm />
           <span className="font-medium text-lg border-b-[3px] pb-4 mt-6 w-fit border-orange-500 mb-10">
-            اطلاعات دیجیتایز
+            اطلاعات دیجی تایز
           </span>
           <div className="flex flex-col gap-y-1 opacity-80 mb-5">
             <span className="text-lg font-medium">دفتر مرکزی</span>
@@ -32,7 +34,7 @@ const contactUsPage: NextPage = () => {
               استان تهران شهر تهران - سعادت آباد - نبش خیابان ۲۱ - پلاک ۲۸
             </span>
           </div>
-          <div className="flex flex-col gap-y-1 opacity-80 mb-5">
+          <div className="flex flex-col gap-y-1 opacity-80 mb-12">
             <span className="text-lg font-medium">خدمات پس از فروش</span>
             <span className="text-sm">
               لطفاً کالا را برای بازگرداندن و ارسال آن به خدمات پس از فروش دیجی
@@ -43,6 +45,7 @@ const contactUsPage: NextPage = () => {
         </div>
       </main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

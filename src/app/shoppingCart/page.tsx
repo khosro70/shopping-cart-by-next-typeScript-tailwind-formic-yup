@@ -52,13 +52,16 @@ const shoppingCartPage: NextPage = () => {
                     />
                   ))}
                 {displayCount < states.products.length && (
-                  <button className="rounded p-2 bg-slate-200 font-medium hover:bg-slate-300 transition" onClick={handleShowAll}>
+                  <button
+                    className="rounded p-2 bg-slate-200 font-medium hover:bg-slate-300 transition"
+                    onClick={handleShowAll}
+                  >
                     نمایش همه محصولات سبد خرید
                   </button>
                 )}
               </div>
             </div>
-            <div className="mt-2 lg:mt-0 mx-auto flex flex-col w-full lg:w-96 bg-gray-50 h-44 p-6 justify-between">
+            <div className="mt-2 lg:mt-0 mx-auto flex flex-col w-full lg:w-96 bg-gray-50 h-44 p-6 justify-between border border-slate-300">
               <div className="flex justify-between text-md">
                 <span>جمع سبد خرید</span>
                 <span>

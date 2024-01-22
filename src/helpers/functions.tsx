@@ -86,6 +86,18 @@ export function calculateDiscountedPrice(
   transition: Bounce,
   });
 
+ export const notifySuccessSendMessage = () =>toast.success("پیام شما با موفقیت ارسال شد !", {
+  position: "top-right",
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "colored",
+  transition: Bounce,
+  });
+
 export function filterProducts(
   data: productInterface[],
   filterOptions: {
