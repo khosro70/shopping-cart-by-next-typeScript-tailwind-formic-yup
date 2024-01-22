@@ -61,7 +61,7 @@ const shoppingCartPage: NextPage = () => {
                 )}
               </div>
             </div>
-            <div className="mt-2 lg:mt-0 mx-auto flex flex-col w-full lg:w-96 bg-gray-50 h-44 p-6 justify-between border border-slate-300">
+            <div className="sticky left-0 top-28 mt-2 lg:mt-0 mx-auto flex flex-col w-full lg:w-96 bg-gray-50 h-44 p-6 justify-between border border-slate-300">
               <div className="flex justify-between text-md">
                 <span>جمع سبد خرید</span>
                 <span>

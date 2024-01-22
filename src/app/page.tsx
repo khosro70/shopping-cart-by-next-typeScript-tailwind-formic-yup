@@ -13,7 +13,6 @@ const Home: NextPage = () => {
     <div>
       <Header />
       <main className="container mx-auto 2xl:max-w-screen-2xl px-4 mt-28 grid gap-4">
-        {/* نوار حرکت تیترهای مهم به صورت انیمیشن */}
         <div className="h-fit flex gap-x-5">
           <div>
             <DesktopNavbar />

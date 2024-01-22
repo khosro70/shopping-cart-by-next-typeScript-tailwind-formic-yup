@@ -1,5 +1,4 @@
 import { ProductDetailsInterfaceProps } from "@/helpers/conteracts";
-import Image from "next/image";
 import React, { useState } from "react";
 import { FaCheck, FaThumbsUp } from "react-icons/fa";
 

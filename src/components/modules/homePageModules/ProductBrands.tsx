@@ -22,7 +22,6 @@ const ProductBrands: React.FC = () => {
       brands = brands.filter((item) => item !== newBrand);
     }
     dispatch(setProductBrand(brands));
-    // console.log(object);
   };
 
   return (
