@@ -12,7 +12,7 @@ import { Empty_Cart } from "@/helpers/Icons";
 import Link from "next/link";
 import { useState } from "react";
 
-const shoppingCartPage: NextPage = () => {
+const ShoppingCartPage: NextPage = () => {
   const [displayCount, setDisplayCount] = useState(2);
   const states = useAppSelector((state) => state.shoppingCartStates);
   const handleShowAll = () => {
@@ -99,4 +99,4 @@ const shoppingCartPage: NextPage = () => {
   );
 };
 
-export default shoppingCartPage;
+export default ShoppingCartPage;

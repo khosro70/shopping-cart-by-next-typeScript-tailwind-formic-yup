@@ -6,7 +6,7 @@ import ContactUsForm from "@/components/templates/contactus/ContactUsForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const contactUsPage: NextPage = () => {
+const ContactUsPage: NextPage = () => {
   return (
     <div>
       <Header />
@@ -50,4 +50,4 @@ const contactUsPage: NextPage = () => {
   );
 };
 
-export default contactUsPage;
+export default ContactUsPage;

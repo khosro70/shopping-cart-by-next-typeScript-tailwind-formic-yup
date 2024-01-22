@@ -25,7 +25,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
   let type: string | undefined;
   let productData;
 
-  if (product) {
+  if (product) { 
     productData = product;
     type = product.type;
   }
