@@ -1,9 +1,20 @@
-import { menuItems } from "@/helpers/Datas";
+"use client";
+import { menuItems, productsData } from "@/helpers/Datas";
 import { DigitaizIcon, SearchIcon } from "@/helpers/Icons";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const SearchAndMenuItems: React.FC = () => {
+  const [searchValue, setSearchValue] = useState<string>("");
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+  };
+  let filteredProducts;
+  if (searchValue.length !== 0) {
+    filteredProducts = productsData.filter((product) =>
+      product.name.includes(searchValue)
+    );
+  }
   return (
     <>
       <div className="flex justify-center items-center">
@@ -21,14 +32,35 @@ const SearchAndMenuItems: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="hidden lg:flex justify-center items-center max-w-[260px] lg:w-1/5 bg-stone-200 px-1 mr-2 md:mr-10 lg:mr-3 xl:mr-32 rounded flex-auto">
+      <div className="relative hidden lg:flex justify-center items-center max-w-[260px] lg:w-1/5 bg-stone-200 px-1 mr-2 md:mr-10 lg:mr-3 xl:mr-32 rounded flex-auto">
         <button>
           <SearchIcon />
         </button>
         <input
           className="flex-1 border-none bg-stone-200 mr-2 focus:border-none focus:outline-none focus:ring-0 text text-slate-600"
           placeholder="جست و جوی نام محصول و ..."
+          onChange={handleSearchChange}
         />
+        {searchValue.length > 0 ? (
+          <ul className="absolute top-14 right-0 w-full bg-slate-50 rounded p-2 border-slate-300 border-[1px]">
+            {filteredProducts && filteredProducts.length > 0 ? (
+              filteredProducts.map((product, index) => (
+                <li
+                  className={`p-2 text-sm ${
+                    index !== filteredProducts.length - 1
+                      ? "border-b border-slate-300"
+                      : ""
+                  }`}
+                  key={product.id}
+                >
+                  <Link href={`/${product.id}`}>{product.name}</Link>
+                </li>
+              ))
+            ) : (
+              <li key="1">موردی یافت نشد</li>
+            )}
+          </ul>
+        ) : null}
       </div>
     </>
   );

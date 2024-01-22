@@ -6,6 +6,10 @@ export interface BurgerMenuInterfaceProps {
   setOpenBurger: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+export interface SearchAndMenuItemsInterfaceProps {
+  productsData: productInterface[];
+}
+
 export interface ProductInterfaceProps {
   key: number;
   data: {
