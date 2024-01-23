@@ -93,5 +93,6 @@ const InputWithOptions = forwardRef<
     </div>
   );
 });
+InputWithOptions.displayName = "InputWithOptions";
 
 export default InputWithOptions;
