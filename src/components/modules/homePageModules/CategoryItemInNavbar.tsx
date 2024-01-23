@@ -11,7 +11,6 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
   isSelected,
   onClick,
 }) => {
-  const productsState = useAppSelector((state) => state.productfilterInNavbar);
   const dispatch = useAppDispatch();
   let itemType: string;
   const clickHandler = () => {
@@ -21,7 +20,6 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
     id === 3 ? (itemType = "laptop") : null;
     id === 4 ? (itemType = "watch") : null;
     dispatch(setProductType(itemType));
-    // localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   return (

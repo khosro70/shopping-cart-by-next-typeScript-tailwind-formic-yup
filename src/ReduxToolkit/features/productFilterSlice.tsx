@@ -1,5 +1,4 @@
 import { productsData } from "@/helpers/Datas";
-import { productInterface } from "@/helpers/conteracts";
 import { filterProducts } from "@/helpers/functions";
 import { createSlice } from "@reduxjs/toolkit";
 
@@ -63,20 +62,7 @@ export const productsFilterSlice = createSlice({
         state.navFilterType
       );
     },
-    setproductFilterStateFromLocalStorage: (state, action) => {
-      const {
-        productsFilter,
-        productBrands,
-        productColors,
-        productType,
-        navFilterType,
-      } = action.payload || {};
-      state.productsFilter = productsFilter || [];
-      state.productBrands = productBrands || [];
-      state.productColors = productColors || [];
-      state.productType = productType || "";
-      state.navFilterType = navFilterType || "";
-    },
+    
   },
 });
 
@@ -85,7 +71,6 @@ export const {
   setProductBrand,
   setProductcolor,
   setProductType,
-  setproductFilterStateFromLocalStorage,
 } = productsFilterSlice.actions;
 
 export default productsFilterSlice.reducer;

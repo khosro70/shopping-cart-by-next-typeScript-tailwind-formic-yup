@@ -24,12 +24,10 @@ export default function Header() {
 
   const LoginHandler = () => {
     localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
-    // localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   const basketHandler = () => {
     localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
-    // localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   return (

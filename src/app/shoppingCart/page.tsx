@@ -12,7 +12,6 @@ import { Empty_Cart } from "@/helpers/Icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
-// import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const ShoppingCartPage: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -27,13 +26,8 @@ const ShoppingCartPage: NextPage = () => {
     if (shoppCartState) {
       shoppCartState = JSON.parse(shoppCartState);
     }
-    // let productFilterState = localStorage.getItem("productsState");
-    // if (productFilterState) {
-    //   productFilterState = JSON.parse(productFilterState);
-    // }
+
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
-    // dispatch(setproductFilterStateFromLocalStorage(productFilterState));
-    // console.log(shoppCartState);
   }, []);
 
   return (
