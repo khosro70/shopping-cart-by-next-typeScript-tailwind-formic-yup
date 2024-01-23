@@ -1,6 +1,6 @@
 "use client";
 import { setProductType } from "@/ReduxToolkit/features/productFilterSlice";
-import { useAppDispatch } from "@/ReduxToolkit/hooks";
+import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
 import { LaptopIcon, MobileIcon, WatchIcon } from "@/helpers/Icons";
 import { CategoryItemInNavbarPropsInterface } from "@/helpers/conteracts";
 import Link from "next/link";
@@ -11,6 +11,7 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
   isSelected,
   onClick,
 }) => {
+  const productsState = useAppSelector((state) => state.productfilterInNavbar)
   const dispatch = useAppDispatch();
   let itemType: string;
   const clickHandler = () => {
@@ -20,6 +21,7 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
     id === 3 ? (itemType = "laptop") : null;
     id === 4 ? (itemType = "watch") : null;
     dispatch(setProductType(itemType));
+    localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   return (

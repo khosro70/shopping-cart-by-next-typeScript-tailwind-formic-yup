@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
-// import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
+import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -20,12 +20,12 @@ const Home: NextPage = () => {
     if (shoppCartState) {
       shoppCartState = JSON.parse(shoppCartState);
     }
-    // let productFilterState = localStorage.getItem("productsState");
-    // if (productFilterState) {
-    //   productFilterState = JSON.parse(productFilterState);
-    // }
+    let productFilterState = localStorage.getItem("productsState");
+    if (productFilterState) {
+      productFilterState = JSON.parse(productFilterState);
+    }
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
-    // dispatch(setproductFilterStateFromLocalStorage(productFilterState));
+    dispatch(setproductFilterStateFromLocalStorage(productFilterState));
   }, []);
   return (
     <div>
