@@ -1,3 +1,4 @@
+"use client"
 import DesktopNavbar from "@/components/modules/homePageModules/DesktopNavbar";
 import Header from "@/components/modules/shared/Header";
 import NavFilters from "@/components/modules/homePageModules/NavFilters";
@@ -7,8 +8,25 @@ import { NextPage } from "next";
 
 import Footer from "@/components/modules/shared/Footer";
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/ReduxToolkit/hooks";
+import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
+import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const Home: NextPage = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    let shoppCartState = localStorage.getItem("shoppCartState");
+    if (shoppCartState) {
+      shoppCartState = JSON.parse(shoppCartState);
+    }
+    let productFilterState = localStorage.getItem("productsState");
+    if (productFilterState) {
+      shoppCartState = JSON.parse(productFilterState);
+    }
+    dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
+    dispatch(setproductFilterStateFromLocalStorage(shoppCartState));
+  }, []);
   return (
     <div>
       <Header />

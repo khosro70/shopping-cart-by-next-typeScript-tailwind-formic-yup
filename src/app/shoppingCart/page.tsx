@@ -5,19 +5,35 @@ import { NextPage } from "next";
 
 import Footer from "@/components/modules/shared/Footer";
 
-import { useAppSelector } from "@/ReduxToolkit/hooks";
+import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
 import ProductItemInShoppingCart from "@/components/modules/shoppingCartModules/ProductItemInShoppingCart";
 import { englishNumbersToPersian } from "@/helpers/functions";
 import { Empty_Cart } from "@/helpers/Icons";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
+import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const ShoppingCartPage: NextPage = () => {
+  const dispatch = useAppDispatch();
   const [displayCount, setDisplayCount] = useState(2);
   const states = useAppSelector((state) => state.shoppingCartStates);
   const handleShowAll = () => {
     setDisplayCount(states.products.length);
   };
+
+  useEffect(() => {
+    let shoppCartState = localStorage.getItem("shoppCartState");
+    if (shoppCartState) {
+      shoppCartState = JSON.parse(shoppCartState);
+    }
+    let productFilterState = localStorage.getItem("productsState");
+    if (productFilterState) {
+      shoppCartState = JSON.parse(productFilterState);
+    }
+    dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
+    dispatch(setproductFilterStateFromLocalStorage(shoppCartState));
+  }, []);
 
   return (
     <div>

@@ -11,6 +11,7 @@ import { englishNumbersToPersian } from "@/helpers/functions";
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
   const shopCartState = useAppSelector((state) => state.shoppingCartStates);
+  const productsState = useAppSelector((state) => state.productfilterInNavbar);
   const handleOutsideClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
   ): void => {
@@ -20,6 +21,16 @@ export default function Header() {
     ) {
       setOpenBurger(false);
     }
+  };
+
+  const LoginHandler = () => {
+    localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+    localStorage.setItem("productsState", JSON.stringify(productsState));
+  };
+
+  const basketHandler = () => {
+    localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+    localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   return (
@@ -38,6 +49,7 @@ export default function Header() {
               <Link
                 className="flex justify-center items-center text-sm"
                 href="/shoppingCart"
+                onClick={basketHandler}
               >
                 <ShoppingCartIcon />
                 <span className="mr-2 lg:text-sm">سبد خرید</span>
@@ -54,6 +66,7 @@ export default function Header() {
               <Link
                 className="flex justify-center items-center text-sm"
                 href="/login"
+                onClick={LoginHandler}
               >
                 <LoginIcon />
                 <span className="mr-2 lg:text-sm">ورود</span>

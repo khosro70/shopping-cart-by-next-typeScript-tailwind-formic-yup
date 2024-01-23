@@ -70,6 +70,10 @@ export const shoppingCartSlice = createSlice({
         );
       }
     },
+    setShoppCartStateFromLocalStorage: (state, action) => {
+      state = action.payload;
+      console.log(action.payload);
+    },
   },
 });
 
@@ -78,6 +82,7 @@ export const {
   increaseProductCount,
   decreaseProductCount,
   deleteProduct,
+  setShoppCartStateFromLocalStorage,
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
