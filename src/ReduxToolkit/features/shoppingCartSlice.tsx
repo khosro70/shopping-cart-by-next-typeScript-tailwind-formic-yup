@@ -72,11 +72,11 @@ export const shoppingCartSlice = createSlice({
     },
     setShoppCartStateFromLocalStorage: (state, action) => {
       const { products, allProductsNumber, totalProductPrice, productCount } =
-        action.payload;
-      state.products = products;
-      state.allProductsNumber = allProductsNumber;
-      state.totalProductPrice = totalProductPrice;
-      state.productCount = productCount;
+        action.payload || {};
+      state.products = products || [];
+      state.allProductsNumber = allProductsNumber || 0;
+      state.totalProductPrice = totalProductPrice || 0;
+      state.productCount = productCount || 0;
     },
   },
 });
