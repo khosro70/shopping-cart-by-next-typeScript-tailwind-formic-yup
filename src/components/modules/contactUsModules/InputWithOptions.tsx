@@ -1,12 +1,16 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { MdKeyboardArrowDown, MdOutlineStar } from "react-icons/md";
 import OptionListForSubjectInput from "./OptionListForSubjectInput";
 import { ErrorMessage, Field } from "formik";
 
-const InputWithOptions: React.FC<{
-  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
-}> = ({ setSearchTerm }) => {
+const InputWithOptions = forwardRef<
+  HTMLInputElement,
+  {
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+  }
+>(({ setSearchTerm }, ref) => {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
   const [searchTerm, setSearchTerms] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -39,7 +43,6 @@ const InputWithOptions: React.FC<{
     }
   };
 
-
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -70,7 +73,7 @@ const InputWithOptions: React.FC<{
             type="text"
             className="border-none bg-white focus:ring-0 focus:border-0"
             onFocus={() => setIsOptionsVisible(true)}
-            ref={inputRef}
+            innerRef={(inputRef as React.RefObject<HTMLInputElement>) || ref}
             value={searchTerm}
             onChange={handleInputChange}
           />
@@ -89,6 +92,6 @@ const InputWithOptions: React.FC<{
       <ErrorMessage name="subject" component="div" className="text-red-500" />
     </div>
   );
-};
+});
 
 export default InputWithOptions;
