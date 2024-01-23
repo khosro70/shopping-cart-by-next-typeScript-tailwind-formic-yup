@@ -12,7 +12,7 @@ import { Empty_Cart } from "@/helpers/Icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
-import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
+// import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const ShoppingCartPage: NextPage = () => {
   const dispatch = useAppDispatch();

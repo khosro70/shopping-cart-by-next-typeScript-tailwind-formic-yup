@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { useEffect } from "react";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
-import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
+// import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const ContactUsPage: NextPage = () => {
 

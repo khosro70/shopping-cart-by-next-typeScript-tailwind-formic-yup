@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
-import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
+// import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
