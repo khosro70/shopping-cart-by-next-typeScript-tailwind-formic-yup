@@ -11,7 +11,6 @@ import { englishNumbersToPersian } from "@/helpers/functions";
 export default function Header() {
   const [openBurger, setOpenBurger] = useState(false);
   const shopCartState = useAppSelector((state) => state.shoppingCartStates);
-  const productsState = useAppSelector((state) => state.productfilterInNavbar);
   const handleOutsideClick = (
     event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>
   ): void => {
