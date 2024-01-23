@@ -27,12 +27,12 @@ const ShoppingCartPage: NextPage = () => {
     if (shoppCartState) {
       shoppCartState = JSON.parse(shoppCartState);
     }
-    let productFilterState = localStorage.getItem("productsState");
-    if (productFilterState) {
-      productFilterState = JSON.parse(productFilterState);
-    }
+    // let productFilterState = localStorage.getItem("productsState");
+    // if (productFilterState) {
+    //   productFilterState = JSON.parse(productFilterState);
+    // }
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
-    dispatch(setproductFilterStateFromLocalStorage(productFilterState));
+    // dispatch(setproductFilterStateFromLocalStorage(productFilterState));
     // console.log(shoppCartState);
   }, []);
 
