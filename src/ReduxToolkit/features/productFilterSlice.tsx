@@ -64,8 +64,18 @@ export const productsFilterSlice = createSlice({
       );
     },
     setproductFilterStateFromLocalStorage: (state, action) => {
-      state = action.payload;
-      console.log(action.payload);
+      const {
+        productsFilter,
+        productBrands,
+        productColors,
+        productType,
+        navFilterType,
+      } = action.payload;
+      state.productsFilter = productsFilter;
+      state.productBrands = productBrands;
+      state.productColors = productColors;
+      state.productType = productType;
+      state.navFilterType = navFilterType;
     },
   },
 });
@@ -75,8 +85,7 @@ export const {
   setProductBrand,
   setProductcolor,
   setProductType,
-  setproductFilterStateFromLocalStorage
+  setproductFilterStateFromLocalStorage,
 } = productsFilterSlice.actions;
 
 export default productsFilterSlice.reducer;
-

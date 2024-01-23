@@ -29,10 +29,11 @@ const ShoppingCartPage: NextPage = () => {
     }
     let productFilterState = localStorage.getItem("productsState");
     if (productFilterState) {
-      shoppCartState = JSON.parse(productFilterState);
+      productFilterState = JSON.parse(productFilterState);
     }
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
-    dispatch(setproductFilterStateFromLocalStorage(shoppCartState));
+    dispatch(setproductFilterStateFromLocalStorage(productFilterState));
+    // console.log(shoppCartState);
   }, []);
 
   return (

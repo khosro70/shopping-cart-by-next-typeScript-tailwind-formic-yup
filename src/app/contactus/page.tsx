@@ -1,3 +1,4 @@
+"use client"
 import Header from "@/components/modules/shared/Header";
 import { NextPage } from "next";
 
@@ -5,8 +6,26 @@ import Footer from "@/components/modules/shared/Footer";
 import ContactUsForm from "@/components/templates/contactus/ContactUsForm";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAppDispatch } from "@/ReduxToolkit/hooks";
+import { useEffect } from "react";
+import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
+import { setproductFilterStateFromLocalStorage } from "@/ReduxToolkit/features/productFilterSlice";
 
 const ContactUsPage: NextPage = () => {
+
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    let shoppCartState = localStorage.getItem("shoppCartState");
+    if (shoppCartState) {
+      shoppCartState = JSON.parse(shoppCartState);
+    }
+    let productFilterState = localStorage.getItem("productsState");
+    if (productFilterState) {
+      productFilterState = JSON.parse(productFilterState);
+    }
+    dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
+    dispatch(setproductFilterStateFromLocalStorage(productFilterState));
+  }, []);
   return (
     <div>
       <Header />

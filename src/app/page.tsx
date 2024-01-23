@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import DesktopNavbar from "@/components/modules/homePageModules/DesktopNavbar";
 import Header from "@/components/modules/shared/Header";
 import NavFilters from "@/components/modules/homePageModules/NavFilters";
@@ -22,10 +22,10 @@ const Home: NextPage = () => {
     }
     let productFilterState = localStorage.getItem("productsState");
     if (productFilterState) {
-      shoppCartState = JSON.parse(productFilterState);
+      productFilterState = JSON.parse(productFilterState);
     }
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
-    dispatch(setproductFilterStateFromLocalStorage(shoppCartState));
+    dispatch(setproductFilterStateFromLocalStorage(productFilterState));
   }, []);
   return (
     <div>
