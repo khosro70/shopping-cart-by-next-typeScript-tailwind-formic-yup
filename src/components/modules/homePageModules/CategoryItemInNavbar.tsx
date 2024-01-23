@@ -11,7 +11,7 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
   isSelected,
   onClick,
 }) => {
-  const productsState = useAppSelector((state) => state.productfilterInNavbar)
+  const productsState = useAppSelector((state) => state.productfilterInNavbar);
   const dispatch = useAppDispatch();
   let itemType: string;
   const clickHandler = () => {
@@ -21,7 +21,7 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
     id === 3 ? (itemType = "laptop") : null;
     id === 4 ? (itemType = "watch") : null;
     dispatch(setProductType(itemType));
-    localStorage.setItem("productsState", JSON.stringify(productsState));
+    // localStorage.setItem("productsState", JSON.stringify(productsState));
   };
 
   return (
@@ -29,15 +29,13 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
       className={`mb-4 ${isSelected ? "opacity-100" : "opacity-30"}`}
       onClick={clickHandler}
     >
-      <Link href="#">
-        <div className="flex justify-start items-center text-slate-800">
-          {id === 1 ? <MobileIcon /> : null}
-          {id === 2 ? <MobileIcon /> : null}
-          {id === 3 ? <LaptopIcon /> : null}
-          {id === 4 ? <WatchIcon /> : null}
-          <span className="mr-2">{text}</span>
-        </div>
-      </Link>
+      <div className="flex justify-start items-center text-slate-800">
+        {id === 1 ? <MobileIcon /> : null}
+        {id === 2 ? <MobileIcon /> : null}
+        {id === 3 ? <LaptopIcon /> : null}
+        {id === 4 ? <WatchIcon /> : null}
+        <span className="mr-2">{text}</span>
+      </div>
     </li>
   );
 };
