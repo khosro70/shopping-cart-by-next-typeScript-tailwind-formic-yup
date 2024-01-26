@@ -53,7 +53,7 @@ const SearchAndMenuItems: React.FC = () => {
       </div>
       <div className="relative hidden lg:flex justify-center items-center max-w-[260px] lg:w-1/5 bg-stone-200 px-1 mr-2 md:mr-10 lg:mr-3 xl:mr-32 rounded flex-auto">
         <button>
-          <SearchIcon />
+          <SearchIcon /> 
         </button>
         <input
           className="flex-1 border-none bg-stone-200 mr-2 focus:border-none focus:outline-none focus:ring-0 text text-slate-600"
@@ -63,12 +63,12 @@ const SearchAndMenuItems: React.FC = () => {
         {searchValue.length > 0 && isListVisible ? (
           <ul
             ref={ulRef}
-            className="absolute top-14 right-0 w-full bg-slate-50 rounded p-2 border-slate-300 border-[1px]"
+            className="absolute top-14 right-0 w-full bg-stone-200 rounded border-slate-300 border-[1px]"
           >
             {filteredProducts && filteredProducts.length > 0 ? (
               filteredProducts.map((product, index) => (
                 <li
-                  className={`p-2 text-sm ${
+                  className={`p-2 text-sm hover:bg-slate-300 ${
                     index !== filteredProducts.length - 1
                       ? "border-b border-slate-300"
                       : ""
@@ -79,7 +79,7 @@ const SearchAndMenuItems: React.FC = () => {
                 </li>
               ))
             ) : (
-              <li key="1">موردی یافت نشد</li>
+              <li className="p-2" key="1">موردی یافت نشد</li>
             )}
           </ul>
         ) : null}
