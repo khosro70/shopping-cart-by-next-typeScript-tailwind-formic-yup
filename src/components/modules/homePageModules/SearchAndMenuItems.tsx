@@ -2,13 +2,32 @@
 import { menuItems, productsData } from "@/helpers/Datas";
 import { DigitaizIcon, SearchIcon } from "@/helpers/Icons";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const SearchAndMenuItems: React.FC = () => {
   const [searchValue, setSearchValue] = useState<string>("");
+  const [isListVisible, setListVisible] = useState<boolean>(false);
+  const ulRef = useRef<HTMLUListElement>(null);
+
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
+    setListVisible(true);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (ulRef.current && !ulRef.current.contains(event.target as Node)) {
+        setListVisible(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   let filteredProducts;
   if (searchValue.length !== 0) {
     filteredProducts = productsData.filter((product) =>
@@ -19,7 +38,7 @@ const SearchAndMenuItems: React.FC = () => {
     <>
       <div className="flex justify-center items-center">
         <Link href="/" className="ml-4">
-          <DigitaizIcon /> 
+          <DigitaizIcon />
         </Link>
         <ul className="hidden lg:flex justify-center items-center text-slate-800 lg:text-sm xl:text-base">
           {menuItems.map((item) => (
@@ -41,8 +60,11 @@ const SearchAndMenuItems: React.FC = () => {
           placeholder="جست و جوی نام محصول و ..."
           onChange={handleSearchChange}
         />
-        {searchValue.length > 0 ? (
-          <ul className="absolute top-14 right-0 w-full bg-slate-50 rounded p-2 border-slate-300 border-[1px]">
+        {searchValue.length > 0 && isListVisible ? (
+          <ul
+            ref={ulRef}
+            className="absolute top-14 right-0 w-full bg-slate-50 rounded p-2 border-slate-300 border-[1px]"
+          >
             {filteredProducts && filteredProducts.length > 0 ? (
               filteredProducts.map((product, index) => (
                 <li
