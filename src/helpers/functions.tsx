@@ -76,7 +76,7 @@ export function calculateDiscountedPrice(
 
  export const notifySuccessLogin = () =>toast.success("با موفقیت وارد شدید !", {
   position: "top-right",
-  autoClose: 2000,
+  autoClose: 3000,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
