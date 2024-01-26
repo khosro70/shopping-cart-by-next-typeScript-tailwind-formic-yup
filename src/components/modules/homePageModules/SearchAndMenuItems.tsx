@@ -19,7 +19,7 @@ const SearchAndMenuItems: React.FC = () => {
     <>
       <div className="flex justify-center items-center">
         <Link href="/" className="ml-4">
-          <DigitaizIcon />
+          <DigitaizIcon /> 
         </Link>
         <ul className="hidden lg:flex justify-center items-center text-slate-800 lg:text-sm xl:text-base">
           {menuItems.map((item) => (

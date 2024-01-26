@@ -11,17 +11,30 @@ import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
+import { notifySuccessLogin } from "@/helpers/functions";
+import { useSearchParams } from 'next/navigation'
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
+
+  const searchParams = useSearchParams()
+  const isSuccess = searchParams.get("success");
+
+  useEffect(() => {
+    if (isSuccess) {
+      notifySuccessLogin();
+    }
+  }, [isSuccess]);
+
   useEffect(() => {
     let shoppCartState = localStorage.getItem("shoppCartState");
     if (shoppCartState) {
       shoppCartState = JSON.parse(shoppCartState);
     }
-    
+
     dispatch(setShoppCartStateFromLocalStorage(shoppCartState));
   }, []);
+
   return (
     <div>
       <Header />

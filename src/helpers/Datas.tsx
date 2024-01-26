@@ -537,7 +537,7 @@ export const menuItems = [
   },
   {
     id: "2",
-    href: "#",
+    href: "/",
     text: "کالای دیجیتال",
   },
   {

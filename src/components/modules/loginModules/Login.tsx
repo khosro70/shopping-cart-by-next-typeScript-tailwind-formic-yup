@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import * as Yup from "yup";
 import "react-toastify/dist/ReactToastify.css";
-import { notifySuccessLogin } from "@/helpers/functions";
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string()
@@ -19,7 +18,6 @@ const LoginSchema = Yup.object().shape({
 
 const Login: React.FC = () => {
   const router = useRouter();
-  
 
   const formik = useFormik({
     initialValues: {
@@ -31,10 +29,8 @@ const Login: React.FC = () => {
 
       if (isValid) {
         console.log(values);
-        notifySuccessLogin();
-        router.push("/");
+        router.push("/?success=true");
       }
-      
     },
   });
   return (
@@ -83,7 +79,6 @@ const Login: React.FC = () => {
           است
         </div>
       </div>
-      
     </div>
   );
 };

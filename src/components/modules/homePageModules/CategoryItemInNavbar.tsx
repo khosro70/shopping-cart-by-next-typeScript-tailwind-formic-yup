@@ -1,9 +1,8 @@
 "use client";
 import { setProductType } from "@/ReduxToolkit/features/productFilterSlice";
-import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
+import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { LaptopIcon, MobileIcon, WatchIcon } from "@/helpers/Icons";
 import { CategoryItemInNavbarPropsInterface } from "@/helpers/conteracts";
-import Link from "next/link";
 
 const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
   id,
