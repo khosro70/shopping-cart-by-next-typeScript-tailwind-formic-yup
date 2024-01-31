@@ -46,7 +46,7 @@ const SearchAndMenuItems: React.FC = () => {
               key={item.id}
               className="lg:mx-[7px] xl:mx-3 StyleMenuItem font-medium"
             >
-              <Link href={item.href}>{item.text}</Link>
+              <Link href={item.href} onClick={(e) => item.href === "#" && e.preventDefault()}>{item.text}</Link>
             </li>
           ))}
         </ul>
