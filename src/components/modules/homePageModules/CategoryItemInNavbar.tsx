@@ -23,7 +23,7 @@ const CategoryItemInNavbar: React.FC<CategoryItemInNavbarPropsInterface> = ({
 
   return (
     <li
-      className={`mb-4 ${isSelected ? "opacity-100" : "opacity-30"}`}
+      className={`mb-4 cursor-pointer ${isSelected ? "opacity-100" : "opacity-30"}`}
       onClick={clickHandler}
     >
       <div className="flex justify-start items-center text-slate-800">
