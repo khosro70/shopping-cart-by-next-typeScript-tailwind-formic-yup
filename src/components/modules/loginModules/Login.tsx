@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import * as Yup from "yup";
-import "react-toastify/dist/ReactToastify.css";
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string()
@@ -28,7 +27,6 @@ const Login: React.FC = () => {
       const isValid = await formik.validateForm();
 
       if (isValid) {
-        console.log(values);
         router.push("/?success=true");
       }
     },
