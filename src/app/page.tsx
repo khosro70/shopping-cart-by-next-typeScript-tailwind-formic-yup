@@ -52,7 +52,7 @@ const Home: NextPage = () => {
       <footer>
         <Footer />
       </footer>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 };
