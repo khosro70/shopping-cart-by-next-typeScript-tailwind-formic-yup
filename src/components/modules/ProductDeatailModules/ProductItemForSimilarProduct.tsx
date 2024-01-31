@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { ProductInterfaceProps } from "@/helpers/conteracts";
 import { englishNumbersToPersian } from "@/helpers/functions";
+import { useRouter } from "next/navigation";
 
 const ProductItemForSimilarProduct: React.FC<ProductInterfaceProps> = ({
   data,
@@ -18,8 +19,16 @@ const ProductItemForSimilarProduct: React.FC<ProductInterfaceProps> = ({
     setSelectedSpan(index);
   };
 
+  const router = useRouter();
+  const handleLinkClick = () => {
+    router.push(`/${id}`);
+  };
+
   return (
-    <div className="relative bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl">
+    <div
+      onClick={handleLinkClick}
+      className="relative cursor-pointer bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl"
+    >
       {discountPercentage ? (
         <span className="absolute top-2 right-2 bg-red-700 text-slate-50 p-1 rounded-full">
           {discountPercentage} %

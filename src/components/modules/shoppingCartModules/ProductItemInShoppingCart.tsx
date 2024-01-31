@@ -17,7 +17,7 @@ import {
 } from "@/ReduxToolkit/features/shoppingCartSlice";
 import { FiMinus } from "react-icons/fi";
 import ProductDetails from "./ProductDetails";
-import { useState } from "react";
+import { useState } from "react"; 
 
 const ProductItemInShoppingCart: React.FC<
   ProductInterfacePropsInShoppingCard
@@ -25,9 +25,11 @@ const ProductItemInShoppingCart: React.FC<
   const [updateComponent, setUpdateComponent] = useState(true);
   const { id, name, price, image, brand, colors, discountPercentage, count } =
     data;
-  const dispatch = useAppDispatch();
-  const shopCartState = useAppSelector((state) => state.shoppingCartStates);
-  localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+    const shopCartState = useAppSelector((state) => state.shoppingCartStates);
+    const dispatch = useAppDispatch();
+  if (typeof window !== "undefined") {
+    localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+  }
   return (
     <div
       className={`flex border-slate-400 gap-x-6 lg:gap-x-12 p-8 ${
@@ -64,7 +66,7 @@ const ProductItemInShoppingCart: React.FC<
             <button
               onClick={() => {
                 dispatch(deleteProduct(data));
-                setUpdateComponent;
+                setUpdateComponent(!updateComponent);
               }}
               className="py-[6px] px-[10px] rounded-e bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
             >

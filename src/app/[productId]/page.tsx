@@ -10,7 +10,6 @@ import SimilarProductPagination from "@/components/modules/ProductDeatailModules
 import ProductDetails from "@/components/templates/ProductDetails";
 import Footer from "@/components/modules/shared/Footer";
 
-
 interface ProductPagePropsInterface {
   params: {
     productId: string;
@@ -25,7 +24,7 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
   let type: string | undefined;
   let productData;
 
-  if (product) { 
+  if (product) {
     productData = product;
     type = product.type;
   }

@@ -25,7 +25,9 @@ const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
   const dispatch = useAppDispatch();
   const shopCartState = useAppSelector((state) => state.shoppingCartStates);
 
-  localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+  if (typeof window !== "undefined") {
+    localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
+  }
   const selectedProducts = useAppSelector(
     (state) => state.shoppingCartStates.products
   );
@@ -111,11 +113,8 @@ const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
                 <button
                   className="p-[10px] rounded bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
                   onClick={() => {
-                    localStorage.setItem(
-                      "shoppCartState",
-                      JSON.stringify(shopCartState)
-                    );
                     dispatch(deleteProduct(selectedProduct));
+                    setUpdateComponent(!updateComponent)
                   }}
                 >
                   <FaRegTrashAlt />
