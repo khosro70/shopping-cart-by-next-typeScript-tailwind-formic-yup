@@ -6,7 +6,6 @@ const LoginPage: NextPage = () => {
   return (
     <>
       <Login />
-      <ToastContainer />
     </>
   );
 };

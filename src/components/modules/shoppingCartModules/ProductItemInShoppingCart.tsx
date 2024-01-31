@@ -9,7 +9,7 @@ import {
   calculateTotalPriceOfOneProduct,
   englishNumbersToPersian,
 } from "@/helpers/functions";
-import { useAppDispatch } from "@/ReduxToolkit/hooks";
+import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
 import {
   decreaseProductCount,
   deleteProduct,
@@ -17,13 +17,17 @@ import {
 } from "@/ReduxToolkit/features/shoppingCartSlice";
 import { FiMinus } from "react-icons/fi";
 import ProductDetails from "./ProductDetails";
+import { useState } from "react";
 
 const ProductItemInShoppingCart: React.FC<
   ProductInterfacePropsInShoppingCard
 > = ({ data, isBorder }) => {
+  const [updateComponent, setUpdateComponent] = useState(true);
   const { id, name, price, image, brand, colors, discountPercentage, count } =
     data;
   const dispatch = useAppDispatch();
+  const shopCartState = useAppSelector((state) => state.shoppingCartStates);
+  localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
   return (
     <div
       className={`flex border-slate-400 gap-x-6 lg:gap-x-12 p-8 ${
@@ -58,7 +62,10 @@ const ProductItemInShoppingCart: React.FC<
             </button>
           ) : (
             <button
-              onClick={() => dispatch(deleteProduct(data))}
+              onClick={() => {
+                dispatch(deleteProduct(data));
+                setUpdateComponent;
+              }}
               className="py-[6px] px-[10px] rounded-e bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
             >
               <FaRegTrashAlt />

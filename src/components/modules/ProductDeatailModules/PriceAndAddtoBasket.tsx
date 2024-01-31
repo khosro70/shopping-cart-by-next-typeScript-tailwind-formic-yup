@@ -11,7 +11,7 @@ import {
   englishNumbersToPersian,
   findProductInSelectedProduct,
 } from "@/helpers/functions";
-import React from "react";
+import React, { useState } from "react";
 import { FaExclamationCircle, FaRegTrashAlt } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
@@ -21,8 +21,11 @@ import { TbTruckDelivery } from "react-icons/tb";
 const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
   productData,
 }) => {
+  const [updateComponent, setUpdateComponent] = useState(true)
   const dispatch = useAppDispatch();
+  const shopCartState = useAppSelector((state) => state.shoppingCartStates);
 
+  localStorage.setItem("shoppCartState", JSON.stringify(shopCartState));
   const selectedProducts = useAppSelector(
     (state) => state.shoppingCartStates.products
   );
@@ -32,8 +35,9 @@ const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
     productData?.id
   );
 
-  const clickHandler: any = () => {
-    dispatch(addProduct(productData));
+  const clickHandler: any = async () => {
+    await (dispatch as (action: any) => Promise<any>)(addProduct(productData));
+    setUpdateComponent(!updateComponent)
   };
 
   return (
@@ -106,7 +110,13 @@ const PriceAndAddtoBasket: React.FC<ProductDetailsInterfaceProps> = ({
               ) : (
                 <button
                   className="p-[10px] rounded bg-orange-700 hover:bg-orange-600 text-slate-50 flex justify-center items-center"
-                  onClick={() => dispatch(deleteProduct(selectedProduct))}
+                  onClick={() => {
+                    localStorage.setItem(
+                      "shoppCartState",
+                      JSON.stringify(shopCartState)
+                    );
+                    dispatch(deleteProduct(selectedProduct));
+                  }}
                 >
                   <FaRegTrashAlt />
                 </button>
