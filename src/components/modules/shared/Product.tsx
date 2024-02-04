@@ -24,7 +24,7 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
   return (
     <div
       onClick={handleLinkClick}
-      className="relative bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl cursor-pointer"
+      className="relative rounded bg-gray-50 flex flex-col justify-between p-2 hover:shadow-2xl cursor-pointer"
     >
       {discountPercentage ? (
         <span className="absolute top-2 right-2 bg-red-700 text-slate-50 p-1 rounded-full">
