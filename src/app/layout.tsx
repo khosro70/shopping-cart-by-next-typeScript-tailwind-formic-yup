@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import { makeStore } from "@/ReduxToolkit/store";
+import Header from "@/components/modules/shared/Header";
+import Footer from "@/components/modules/shared/Footer";
 
 const vazirMatn = localFont({
   src: [
@@ -63,7 +65,11 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={vazirMatn.className}>
-        <StoreProvider store={store}>{children}</StoreProvider>
+        <StoreProvider store={store}>
+          <Header />
+          {children}
+        </StoreProvider>
+        <Footer />
       </body>
     </html>
   );

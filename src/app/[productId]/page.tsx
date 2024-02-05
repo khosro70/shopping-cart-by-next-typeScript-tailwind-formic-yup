@@ -1,5 +1,4 @@
 "use client";
-import Header from "@/components/modules/shared/Header";
 
 import { NextPage } from "next";
 import { productsData } from "@/helpers/Datas";
@@ -8,7 +7,6 @@ import { productInterface } from "@/helpers/conteracts";
 import SimilarProductPagination from "@/components/modules/ProductDeatailModules/SimilarProductPagination";
 
 import ProductDetails from "@/components/templates/ProductDetails";
-import Footer from "@/components/modules/shared/Footer";
 
 interface ProductPagePropsInterface {
   params: {
@@ -31,7 +29,6 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
 
   return (
     <div>
-      <Header />
       <main className="container mx-auto mt-[105px] px-4">
         {/* bread crump */}
         <div className="flex justify-start px-3 py-2 bg-gray-50 rounded mb-2">
@@ -55,7 +52,6 @@ const ProductPage: NextPage<ProductPagePropsInterface> = ({ params }) => {
           <SimilarProductPagination type={type} />
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

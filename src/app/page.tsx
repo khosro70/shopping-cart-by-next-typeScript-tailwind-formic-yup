@@ -1,23 +1,19 @@
 "use client";
 import DesktopNavbar from "@/components/modules/homePageModules/DesktopNavbar";
-import Header from "@/components/modules/shared/Header";
 import NavFilters from "@/components/modules/homePageModules/NavFilters";
 import Products from "@/components/modules/homePageModules/Products";
 
 import { NextPage } from "next";
-
-import Footer from "@/components/modules/shared/Footer";
-import { ToastContainer } from "react-toastify";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { setShoppCartStateFromLocalStorage } from "@/ReduxToolkit/features/shoppingCartSlice";
 import { notifySuccessLogin } from "@/helpers/functions";
-import { useSearchParams } from 'next/navigation'
+import { useSearchParams } from "next/navigation";
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
 
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
   const isSuccess = searchParams.get("success");
 
   useEffect(() => {
@@ -37,7 +33,6 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <Header />
       <main className="container mx-auto 2xl:max-w-screen-2xl px-4 mt-28 grid gap-4">
         <div className="h-fit flex gap-x-5">
           <div>
@@ -49,10 +44,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <footer>
-        <Footer />
-      </footer>
-      {/* <ToastContainer /> */}
     </div>
   );
 };

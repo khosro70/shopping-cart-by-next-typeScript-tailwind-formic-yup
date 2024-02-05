@@ -1,10 +1,6 @@
 "use client";
-import Header from "@/components/modules/shared/Header";
 
 import { NextPage } from "next";
-
-import Footer from "@/components/modules/shared/Footer";
-
 import { useAppDispatch, useAppSelector } from "@/ReduxToolkit/hooks";
 import ProductItemInShoppingCart from "@/components/modules/shoppingCartModules/ProductItemInShoppingCart";
 import { englishNumbersToPersian } from "@/helpers/functions";
@@ -32,7 +28,6 @@ const ShoppingCartPage: NextPage = () => {
 
   return (
     <div>
-      <Header />
       <main
         className={`container mx-auto mt-28 px-4 flex flex-col lg:flex-row gap-x-4 w-full min-h-[calc(100vh-150px)] ${
           states.productCount < 1 ? "justify-center" : null
@@ -105,7 +100,6 @@ const ShoppingCartPage: NextPage = () => {
           </div>
         )}
       </main>
-      <Footer />
     </div>
   );
 };

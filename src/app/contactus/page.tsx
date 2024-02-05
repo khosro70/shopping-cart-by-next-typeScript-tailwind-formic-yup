@@ -1,10 +1,7 @@
 "use client";
-import Header from "@/components/modules/shared/Header";
 import { NextPage } from "next";
 
-import Footer from "@/components/modules/shared/Footer";
 import ContactUsForm from "@/components/templates/contactus/ContactUsForm";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppDispatch } from "@/ReduxToolkit/hooks";
 import { useEffect } from "react";
@@ -22,8 +19,7 @@ const ContactUsPage: NextPage = () => {
   }, []);
   return (
     <div>
-      <Header />
-      <main className="container mx-auto mt-28 px-4 min-h-[100vh] border-2 border-slate-100">
+      <main className="container mx-auto mt-28 px-4 min-h-[100vh">
         <div className="flex flex-col max-w-5xl mx-auto">
           <span className="font-medium border-b-[3px] pb-4 mb-3 w-fit border-orange-500">
             تماس با دیجی تایز
@@ -57,8 +53,6 @@ const ContactUsPage: NextPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
-      {/* <ToastContainer /> */}
     </div>
   );
 };
