@@ -36,8 +36,8 @@ const Product: React.FC<ProductInterfaceProps> = ({ data }) => {
         className="mb-4 rounded w-full"
         src={`/images/${image}`}
         alt="Picture of the author"
-        width={150}
-        height={150}
+        width={250}
+        height={250}
       />
       <div className="flex justify-between items-center w-full mb-3">
         <span className="opacity-60">{brand}</span>
