@@ -5,6 +5,7 @@ const LoginPage: NextPage = () => {
   return (
     <>
       <Login />
+      <div></div>
     </>
   );
 };
